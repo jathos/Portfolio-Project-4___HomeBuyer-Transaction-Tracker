@@ -1,4 +1,4 @@
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import * as userService from '../../utilities/users-service';
 
 export default function NavBar(props) {
@@ -9,9 +9,7 @@ export default function NavBar(props) {
     }
 
     return (<nav>
-        <Link to="/orders">Order History</Link>
-        &nbsp; | &nbsp;
-        <Link to="/orders/new">New Order</Link>
+        <Link to="/transactions">All Transactions</Link>
         &nbsp; | &nbsp;
         <span>Welcome {props.user.name}</span>
         &nbsp; | &nbsp;
