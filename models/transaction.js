@@ -2,11 +2,11 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const transactionSchema = new Schema({
-    street: String,
-    city: String,
-    state: { type: String, maxlength: 2 },
-    zip: String,
-    closeDate: Date,
+    street: { type: String, required: true },
+    city: { type: String, required: true },
+    state: { type: String, maxlength: 2, required: true },
+    zip: { type: String, required: true },
+    closeDate: { type: Date, required: true },
     user: { type: Schema.Types.ObjectId, ref: 'User' }
 }, {
     timestamps: true,

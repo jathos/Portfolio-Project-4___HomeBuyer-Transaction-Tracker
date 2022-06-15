@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import * as transactionAPI from '../../utilities/transaction-api'
+import * as transactionsAPI from '../../utilities/transaction-api'
 
 function NewTransactionForm() {
     const [formData, setFormData] = useState({
@@ -17,8 +17,10 @@ function NewTransactionForm() {
 
     async function handleTransactionSubmit(evt) {
         evt.preventDefault();
-        const transaction = await transactionAPI.createTransaction();
-
+        console.log("inside handleTransaction function")
+        console.log(formData)
+        const transaction = await transactionsAPI.createTransaction(formData);
+        console.log("AFTER handleTransaction await statement")
     }
 
     return (
@@ -33,11 +35,12 @@ function NewTransactionForm() {
                 <label>Zip</label>
                 <input name="zip" onChange={handleChange} />
                 <label>Close Date</label>
-                <input type="date" name="closeDate" />
+                <input type="date" name="closeDate" onChange={handleChange} />
                 <button type="submit">Create Transaction</button>
             </form>
             <h1>{formData.street}</h1>
             <h1>{formData.city}, {formData.state} {formData.zip}</h1>
+            <h1>{formData.closeDate}</h1>
         </div>
     );
 };
