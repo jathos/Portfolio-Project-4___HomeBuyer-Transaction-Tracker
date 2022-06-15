@@ -5,7 +5,8 @@ const bcrypt = require("bcrypt");
 module.exports = {
     create,
     login,
-    checkToken
+    checkToken,
+    getAll
 };
 
 async function create(req, res) {
@@ -28,6 +29,12 @@ async function login(req, res) {
     } catch {
         res.status(400).json('Bad Credentials');
     }
+}
+
+async function getAll(req, res) {
+    console.log("in the controller!")
+    const allUsers = await User.find({ isAdmin: false });
+    res.json(allUsers);
 }
 
 function createJWT(user) {

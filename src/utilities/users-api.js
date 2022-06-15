@@ -69,3 +69,7 @@ async function sendRequest(url, method = 'GET', payload = null) {
 export function checkToken() {
     return sendRequest(`${BASE_URL}/check-token`);
 }
+
+export function getAll() {
+    return sendRequest(BASE_URL);
+}

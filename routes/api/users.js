@@ -4,6 +4,7 @@ const usersCtrl = require('../../controllers/api/users');
 const ensureLoggedIn = require('../../config/ensureLoggedIn');
 
 // GET /api/users/check-token
+router.get('/', usersCtrl.getAll)
 router.get('/check-token', ensureLoggedIn, usersCtrl.checkToken);
 
 // POST /api/users
