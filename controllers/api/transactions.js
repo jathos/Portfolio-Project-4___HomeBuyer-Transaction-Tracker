@@ -1,11 +1,16 @@
 const Transaction = require('../../models/transaction');
 
 module.exports = {
-    create
+    create,
+    getAll
 };
 
 async function create(req, res) {
     const transaction = await Transaction(req.body).save();
-    console.log("after transaction created in database")
     res.json(transaction);
+};
+
+async function getAll(req, res) {
+    const allTransactions = await Transaction.find({}).sort('closeDate')
+    res.json(allTransactions);
 }
