@@ -1,7 +1,8 @@
 import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import * as transactionsAPI from '../../utilities/transaction-api'
 
-function NewTransactionForm() {
+function NewTransactionForm({ setShowForm }) {
     const [formData, setFormData] = useState({
         street: "",
         city: "",
@@ -10,6 +11,8 @@ function NewTransactionForm() {
         closeDate: null
     })
 
+    const history = useHistory();
+
     function handleChange(evt) {
         const newState = { ...formData, [evt.target.name]: evt.target.value }
         setFormData(newState)
@@ -17,14 +20,13 @@ function NewTransactionForm() {
 
     async function handleTransactionSubmit(evt) {
         evt.preventDefault();
-        console.log("inside handleTransaction function")
-        console.log(formData)
         const transaction = await transactionsAPI.createTransaction(formData);
-        console.log("AFTER handleTransaction await statement")
+        setShowForm(false)
     }
 
     return (
         <div>
+            <button onClick={() => setShowForm(false)}>Back</button>
             <form onSubmit={handleTransactionSubmit}>
                 <label>Street</label>
                 <input name="street" onChange={handleChange} />
