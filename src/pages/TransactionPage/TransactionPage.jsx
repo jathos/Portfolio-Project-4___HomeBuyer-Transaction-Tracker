@@ -29,11 +29,14 @@ function TransactionPage({ user }) {
 
     return (
         <div>
-            <h1>Transaction Page</h1>
-            <h1>{user.name}</h1>
-            <h1>{user.isAdmin ? "is admin" : "is NOT Admin"}</h1>
-            {showForm ? <NewTransactionForm setShowForm={setShowForm} /> : <button onClick={() => setShowForm(true)}>Add New Transaction</button>}
-            <TransactionList transactions={transactions} allUsers={usersRef.current} />
+            {user.isAdmin ? <>
+                <h1>Transaction Page</h1>
+                {showForm ? <NewTransactionForm setShowForm={setShowForm} /> : <button onClick={() => setShowForm(true)}>Add New Transaction</button>}
+                < TransactionList transactions={transactions} allUsers={usersRef.current} />
+            </>
+                :
+                <h1>Ask your agent to assign you a transaction</h1>
+            }
         </div>
     );
 };
