@@ -8,6 +8,9 @@ const transactionSchema = new Schema({
     zip: String,
     closeDate: Date,
     user: { type: Schema.Types.ObjectId, ref: 'User' }
+}, {
+    timestamps: true,
+    toJSON: { virtuals: true }
 });
 
 transactionSchema.virtual('address').get(function () {
