@@ -24,6 +24,7 @@ export default function App() {
     }, [showForm]);
 
     useEffect(function () {
+        console.log("getting users....")
         async function getAllUsers() {
             const allUsers = await usersAPI.getAll();
             usersRef.current = allUsers
