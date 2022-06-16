@@ -32,7 +32,6 @@ async function login(req, res) {
 }
 
 async function getAll(req, res) {
-    console.log("in the controller!")
     const allUsers = await User.find({ isAdmin: false });
     res.json(allUsers);
 }

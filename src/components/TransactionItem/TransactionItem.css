@@ -2,6 +2,9 @@
     display: flex;
     flex-direction: column;
     width: 45%;
+    border: solid;
+    border-color: black;
+    margin: 2px;
 }
 
 form {

@@ -1,31 +1,31 @@
-import { useState, useEffect, useRef } from 'react';
+// import { useState, useEffect, useRef } from 'react';
 import TransactionList from '../../components/TransactionList/TransactionList';
 import NewTransactionForm from '../../components/NewTransactionForm/NewTransactionForm';
-import * as transactionsAPI from '../../utilities/transaction-api'
-import * as usersAPI from '../../utilities/users-api'
+// import TransactionDetail from '../TransactionDetail/TransactionDetail';
+// import * as transactionsAPI from '../../utilities/transaction-api'
+// import * as usersAPI from '../../utilities/users-api'
 
-function TransactionPage({ user }) {
+function TransactionPage({ user, transactions, showForm, setShowForm, usersRef }) {
 
-    const [showForm, setShowForm] = useState(false)
-    const [transactions, setTransactions] = useState([])
-    const usersRef = useRef([]);
+    // const [showForm, setShowForm] = useState(false)
+    // const [transactions, setTransactions] = useState([])
+    // const usersRef = useRef([]);
 
-    useEffect(function () {
-        async function getTransactions() {
-            const allTransactions = await transactionsAPI.getAll();
-            setTransactions(allTransactions);
-        };
-        getTransactions();
-    }, [showForm]);
+    // useEffect(function () {
+    //     async function getTransactions() {
+    //         const allTransactions = await transactionsAPI.getAll();
+    //         setTransactions(allTransactions);
+    //     };
+    //     getTransactions();
+    // }, [showForm]);
 
-    useEffect(function () {
-        async function getAllUsers() {
-            const allUsers = await usersAPI.getAll();
-            usersRef.current = allUsers
-        };
-        getAllUsers();
-    }, []);
-
+    // useEffect(function () {
+    //     async function getAllUsers() {
+    //         const allUsers = await usersAPI.getAll();
+    //         usersRef.current = allUsers
+    //     };
+    //     getAllUsers();
+    // }, []);
 
     return (
         <div>
