@@ -1,9 +1,11 @@
 const Transaction = require('../../models/transaction');
+const User = require('../../models/user');
 
 module.exports = {
     create,
     getAll,
-    assignUser
+    assignUser,
+    getUserTransactions
 };
 
 async function create(req, res) {
@@ -20,5 +22,11 @@ async function assignUser(req, res) {
     const doc = await Transaction.findOne({ _id: req.body.id });
     doc.user = req.body.user;
     await doc.save();
+    res.json(doc);
+};
+
+async function getUserTransactions(req, res) {
+    const doc = await Transaction.find({ user: req.user._id });
+    console.log(doc);
     res.json(doc);
 };

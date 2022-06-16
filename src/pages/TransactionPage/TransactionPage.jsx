@@ -1,4 +1,4 @@
-// import { useState, useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import TransactionList from '../../components/TransactionList/TransactionList';
 import NewTransactionForm from '../../components/NewTransactionForm/NewTransactionForm';
 // import TransactionDetail from '../TransactionDetail/TransactionDetail';
@@ -32,10 +32,12 @@ function TransactionPage({ user, transactions, showForm, setShowForm, usersRef, 
             {user.isAdmin ? <>
                 <h1>Transaction Page</h1>
                 {showForm ? <NewTransactionForm setShowForm={setShowForm} /> : <button onClick={() => setShowForm(true)}>Add New Transaction</button>}
-                < TransactionList transactions={transactions} allUsers={usersRef.current} setRerender={setRerender} />
+                <TransactionList transactions={transactions} allUsers={usersRef.current} setRerender={setRerender} />
             </>
                 :
-                <h1>Ask your agent to assign you a transaction</h1>
+                <>
+                    <TransactionList transactions={transactions} />
+                </>
             }
         </div>
     );

@@ -13,3 +13,7 @@ export function getAll() {
 export function assignUser(payload) {
     return sendRequest(BASE_URL, 'PUT', payload);
 };
+
+export function getUserTransactions() {
+    return sendRequest(`${BASE_URL}/user`)
+}

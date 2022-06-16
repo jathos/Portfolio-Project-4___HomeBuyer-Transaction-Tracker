@@ -16,6 +16,7 @@ export default function App() {
     const [rerender, setRerender] = useState(false);
     const usersRef = useRef([]);
 
+
     useEffect(function () {
         console.log("getting users....")
         async function getAllUsers() {
@@ -23,16 +24,22 @@ export default function App() {
             usersRef.current = allUsers
         };
         getAllUsers();
-    }, []);
+    }, [user]);
 
     useEffect(function () {
         console.log("getting transactions...")
         async function getTransactions() {
-            const allTransactions = await transactionsAPI.getAll();
-            setTransactions(allTransactions);
+            if (user.isAdmin) {
+                const allTransactions = await transactionsAPI.getAll();
+                setTransactions(allTransactions);
+            } else {
+                console.log("getting USER transactions for...", user.name, user._id);
+                const userTransactions = await transactionsAPI.getUserTransactions();
+                setTransactions(userTransactions);
+            }
         };
         getTransactions();
-    }, [showForm, rerender]);
+    }, [showForm, rerender, user]);
 
     return (<main className="App">
         {user ? <>
@@ -44,6 +51,6 @@ export default function App() {
                 <TransactionDetail transactions={transactions} />
             </Route>
             <Redirect to="/transactions" />
-        </> : <AuthPage setUser={setUser} />}
+        </> : <AuthPage setUser={setUser} rerender={rerender} setRerender={setRerender} />}
     </main>);
 }
