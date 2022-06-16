@@ -7,7 +7,7 @@
     margin: 2px;
 }
 
-form {
+.userSelect {
     display: flex;
     justify-content: center;
 }

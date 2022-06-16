@@ -1,9 +1,9 @@
 import { useState, useRef } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import * as transactionsAPI from '../../utilities/transaction-api';
 import './TransactionItem.css';
 
-function TransactionItem({ transaction, allUsers, id }) {
+function TransactionItem({ transaction, allUsers, id, setRerender }) {
 
     const [userSelect, setUserSelect] = useState({
         user: "",
@@ -12,7 +12,7 @@ function TransactionItem({ transaction, allUsers, id }) {
 
     const idRef = useRef(transaction._id)
 
-    const history = useHistory();
+    let rerender = false;
 
     async function assignUser(evt) {
         evt.preventDefault();
@@ -23,8 +23,8 @@ function TransactionItem({ transaction, allUsers, id }) {
                 user: userSelect.user,
                 id: idRef.current
             };
-            const user = await transactionsAPI.assignUser(payload)
-            history.push('/transactions')
+            const update = await transactionsAPI.assignUser(payload);
+            setRerender([!rerender])
         };
     };
 
@@ -37,15 +37,22 @@ function TransactionItem({ transaction, allUsers, id }) {
             <div className="TransactionItem">
                 {transaction.street}<br></br>
                 {transaction.address}
-                <form>
-                    <select name="user" type="select" onChange={handleChange}>
-                        <option value="">Select a User</option>
-                        {allUsers.map(ele => <option value={ele._id}>{ele.name}</option>)}
-                    </select>
-                    <button type="submit" onClick={assignUser}>Assign User</button>
-                </form>
-                <p>{userSelect.error}</p>
-                <Link to={`/transactions/${id}`}><button>View Details</button></Link>
+                {!transaction.user ? <>
+                    <form className="userSelect">
+                        <select name="user" type="select" onChange={handleChange}>
+                            <option value="">Select a User</option>
+                            {allUsers.map(ele => <option value={ele._id}>{ele.name}</option>)}
+                        </select>
+                        <button type="submit" onClick={assignUser}>Assign User</button>
+                    </form>
+                    <p>{userSelect.error}</p>
+                    <Link to={`/transactions/${id}`}><button>View Details</button></Link>
+                </>
+                    :
+                    <Link to={`/transactions/${id}`}><button>View Details</button></Link>
+                }
+
+
             </div>
         </>
     );

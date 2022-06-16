@@ -11,8 +11,9 @@ import './App.css';
 
 export default function App() {
     const [user, setUser] = useState(getUser());
-    const [showForm, setShowForm] = useState(false)
-    const [transactions, setTransactions] = useState([])
+    const [showForm, setShowForm] = useState(false);
+    const [transactions, setTransactions] = useState([]);
+    const [rerender, setRerender] = useState(false);
     const usersRef = useRef([]);
 
     useEffect(function () {
@@ -25,18 +26,19 @@ export default function App() {
     }, []);
 
     useEffect(function () {
+        console.log("getting transactions...")
         async function getTransactions() {
             const allTransactions = await transactionsAPI.getAll();
             setTransactions(allTransactions);
         };
         getTransactions();
-    }, [showForm]);
+    }, [showForm, rerender]);
 
     return (<main className="App">
         {user ? <>
             <NavBar user={user} setUser={setUser} />
             <Route exact path="/transactions">
-                <TransactionPage transactions={transactions} user={user} showForm={showForm} setShowForm={setShowForm} usersRef={usersRef} />
+                <TransactionPage transactions={transactions} user={user} setRerender={setRerender} showForm={showForm} setShowForm={setShowForm} usersRef={usersRef} />
             </Route>
             <Route exact path="/transactions/:id">
                 <TransactionDetail transactions={transactions} />

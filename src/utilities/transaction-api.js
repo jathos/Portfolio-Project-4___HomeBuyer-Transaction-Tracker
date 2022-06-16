@@ -11,6 +11,5 @@ export function getAll() {
 };
 
 export function assignUser(payload) {
-    console.log("made it to the api")
     return sendRequest(BASE_URL, 'PUT', payload);
 };

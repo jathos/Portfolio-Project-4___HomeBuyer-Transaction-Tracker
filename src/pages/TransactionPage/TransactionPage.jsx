@@ -5,7 +5,7 @@ import NewTransactionForm from '../../components/NewTransactionForm/NewTransacti
 // import * as transactionsAPI from '../../utilities/transaction-api'
 // import * as usersAPI from '../../utilities/users-api'
 
-function TransactionPage({ user, transactions, showForm, setShowForm, usersRef }) {
+function TransactionPage({ user, transactions, showForm, setShowForm, usersRef, setRerender }) {
 
     // const [showForm, setShowForm] = useState(false)
     // const [transactions, setTransactions] = useState([])
@@ -32,7 +32,7 @@ function TransactionPage({ user, transactions, showForm, setShowForm, usersRef }
             {user.isAdmin ? <>
                 <h1>Transaction Page</h1>
                 {showForm ? <NewTransactionForm setShowForm={setShowForm} /> : <button onClick={() => setShowForm(true)}>Add New Transaction</button>}
-                < TransactionList transactions={transactions} allUsers={usersRef.current} />
+                < TransactionList transactions={transactions} allUsers={usersRef.current} setRerender={setRerender} />
             </>
                 :
                 <h1>Ask your agent to assign you a transaction</h1>
