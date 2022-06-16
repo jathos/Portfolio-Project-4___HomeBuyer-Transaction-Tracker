@@ -16,14 +16,6 @@ export default function App() {
     const usersRef = useRef([]);
 
     useEffect(function () {
-        async function getTransactions() {
-            const allTransactions = await transactionsAPI.getAll();
-            setTransactions(allTransactions);
-        };
-        getTransactions();
-    }, [showForm]);
-
-    useEffect(function () {
         console.log("getting users....")
         async function getAllUsers() {
             const allUsers = await usersAPI.getAll();
@@ -31,6 +23,14 @@ export default function App() {
         };
         getAllUsers();
     }, []);
+
+    useEffect(function () {
+        async function getTransactions() {
+            const allTransactions = await transactionsAPI.getAll();
+            setTransactions(allTransactions);
+        };
+        getTransactions();
+    }, [showForm]);
 
     return (<main className="App">
         {user ? <>

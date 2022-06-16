@@ -9,3 +9,8 @@ export function createTransaction(formData) {
 export function getAll() {
     return sendRequest(BASE_URL);
 };
+
+export function assignUser(payload) {
+    console.log("made it to the api")
+    return sendRequest(BASE_URL, 'PUT', payload);
+};
