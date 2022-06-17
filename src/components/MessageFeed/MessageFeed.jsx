@@ -25,7 +25,8 @@ function MessageFeed({ taskID, transactionID, taskMessages }) {
 
     return (
         <div>
-            <h4>Messages</h4>
+            <hr></hr>
+            <h4>Messages</h4><hr></hr>
             {(messages.length > 0) ? messages.map((ele, idx) => <MessageItem message={ele} key={ele._id} />) : ""}
             <form onSubmit={handleMessageSubmit}>
                 <textarea rows="3" name="body" onChange={handleChange} value={messageFormData}></textarea>

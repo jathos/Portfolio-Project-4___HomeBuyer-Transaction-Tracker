@@ -3,13 +3,13 @@ function MessageItem({ message }) {
         <>
             {(message.recipient == "Agent") ?
                 < div className="messageRight">
-                    <h5>Client</h5>
-                    <p>{message.body}</p>
+                    <h5 className="messageRight">Client</h5>
+                    <p className="messageRight">{message.body}</p>
                 </div >
                 :
                 <div className="messageLeft">
-                    <h5>Agent</h5>
-                    <p>{message.body}</p>
+                    <h5 className="messageLeft">Agent</h5>
+                    <p className="messageLeft">{message.body}</p>
                 </div>
             }
         </>
