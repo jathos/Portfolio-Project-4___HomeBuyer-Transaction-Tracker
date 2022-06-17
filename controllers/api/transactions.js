@@ -34,13 +34,14 @@ async function getUserTransactions(req, res) {
 
 async function createTask(req, res) {
     const doc = await Transaction.findOne({ _id: req.body.id });
+    const urgency = (req.body.isUrgent == "on") ? true : false;
     const newTask = {
         subject: req.body.subject,
         body: req.body.body,
         dueDate: req.body.dueDate,
-        isUrgent: req.body.isUrgent
+        isUrgent: urgency
     };
     doc.tasks.push(newTask);
     await doc.save();
-    res.json(doc);
+    res.json(newTask);
 }
