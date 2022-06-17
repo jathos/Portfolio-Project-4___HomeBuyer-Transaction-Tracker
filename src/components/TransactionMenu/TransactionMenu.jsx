@@ -1,17 +1,24 @@
-function TransactionMenu() {
+function TransactionMenu({ setView }) {
 
-    function handleClick(evt) {
-        console.log("Hi!  I'm ", evt.target.value)
-    }
+    function handleTasksClick() {
+        setView("Tasks");
+    };
+
+    function handleMessagesClick() {
+        setView("Messages");
+    };
+    function handleContactsClick() {
+        setView("Contacts");
+    };
 
     return (
 
         <div className="viewsMenu">
             <div className="menuHeader">Menu</div>
             <div className="menuItemWrapper">
-                <div className="menuItem">Tasks</div>
-                <div className="menuItem" value="Div" onClick={handleClick}>Messages</div>
-                <div className="menuItem">Contacts</div>
+                <div className="menuItem" onClick={handleTasksClick}>Tasks</div>
+                <div className="menuItem" onClick={handleMessagesClick}>Messages</div>
+                <div className="menuItem" onClick={handleContactsClick}>Contacts</div>
             </div>
         </div>
     );

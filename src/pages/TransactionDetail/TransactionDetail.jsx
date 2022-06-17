@@ -14,7 +14,7 @@ function TransactionDetail({ transaction }) {
             <h1>{transaction[id].street}, {transaction[id].address}</h1>
             <EscrowCounter date={transaction[id].closeDate} />
             <div className="viewsWrapper">
-                <TransactionMenu />
+                <TransactionMenu setView={setView} />
                 <TransactionViewFinder view={view} />
             </div>
         </>
