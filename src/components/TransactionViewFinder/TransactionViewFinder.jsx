@@ -1,9 +1,9 @@
-function TransactionViewFinder({ view }) {
+function TransactionViewFinder({ view, viewFinder }) {
     return (
         <div className="selectionView">
             <div className="viewHeader">{view}</div>
             <div className="viewFinder">
-                You have no pending tasks!
+                {(viewFinder === "Messages") ? <>Message Page</> : (viewFinder === "Tasks") ? <>Task Page</> : (viewFinder === "Contacts" ? <>Contact Page</> : <>Please make a selection from the menu</>)}
             </div>
         </div>
     );

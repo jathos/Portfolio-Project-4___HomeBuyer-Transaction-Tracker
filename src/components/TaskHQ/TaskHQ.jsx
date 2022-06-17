@@ -1,7 +1,11 @@
-function TaskHQ({ user }) {
+import { useState } from 'react';
+
+function TaskHQ({ user, showView, setShowView }) {
+
     return (
         <div className="taskHQ">
-            {user.isAdmin ? <>TaskHQ <button>Add Task</button></> : TaskHQ}
+            {user.isAdmin ? <>TaskHQ <button onClick={() => setShowView(!showView)}>Add Task</button></> : <>TaskHQ</>}
+
         </div>
     );
 };

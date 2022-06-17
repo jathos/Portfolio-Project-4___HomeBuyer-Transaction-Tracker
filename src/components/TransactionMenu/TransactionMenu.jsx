@@ -1,14 +1,17 @@
-function TransactionMenu({ setView }) {
+function TransactionMenu({ setView, setViewFinder }) {
 
     function handleTasksClick() {
         setView("Tasks");
+        setViewFinder("Tasks")
     };
 
     function handleMessagesClick() {
         setView("Messages");
+        setViewFinder("Messages")
     };
     function handleContactsClick() {
         setView("Contacts");
+        setViewFinder("Contacts")
     };
 
     return (

@@ -4,21 +4,27 @@ import TransactionMenu from '../../components/TransactionMenu/TransactionMenu';
 import EscrowCounter from '../../components/EscrowCounter/EscrowCounter';
 import TransactionViewFinder from '../../components/TransactionViewFinder/TransactionViewFinder';
 import TNMBar from '../../components/TNMBar/TNMBar';
+import NewTaskForm from '../../components/NewTaskForm/NewTaskForm';
 import './TransactionDetail.css'
 
 function TransactionDetail({ transaction, user }) {
     const [view, setView] = useState("Tasks")
+    const [viewFinder, setViewFinder] = useState("")
+    const [showView, setShowView] = useState(true)
     const { id } = useParams();
 
     return (
         <>
             <h1>{transaction[id].street}, {transaction[id].address}</h1>
             <EscrowCounter date={transaction[id].closeDate} />
-            <TNMBar user={user} />
-            <div className="viewsWrapper">
-                <TransactionMenu setView={setView} />
-                <TransactionViewFinder view={view} />
+            <TNMBar user={user} showView={showView} setShowView={setShowView} />
+            {showView ? <div className="viewsWrapper">
+                <TransactionMenu setView={setView} setViewFinder={setViewFinder} />
+                <TransactionViewFinder view={view} viewFinder={viewFinder} />
             </div>
+                :
+                <NewTaskForm />}
+
         </>
     );
 };
