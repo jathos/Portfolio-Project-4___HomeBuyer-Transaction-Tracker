@@ -104,3 +104,19 @@
 .escrowCounter {
     margin-bottom: 15px;
 }
+
+.taskItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border: solid;
+    border-color: black;
+    padding: 7px;
+    gap: 2px;
+}
+
+.taskItem>h3,
+p {
+    display: flex;
+    margin: 0;
+}

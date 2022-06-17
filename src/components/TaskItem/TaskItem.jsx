@@ -7,7 +7,7 @@ function TaskItem({ task }) {
     const dueDate = new Date(task.dueDate).toLocaleDateString();
 
     return (
-        <div className="classItem" onClick={() => setHideBody(!hideBody)}>
+        <div className="taskItem" onClick={() => setHideBody(!hideBody)}>
             <h3>{task.subject}</h3>
             <p>Due Date: {dueDate}</p>
             {hideBody ? "" : <p>{task.body}</p>}
