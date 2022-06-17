@@ -1,7 +1,7 @@
 .viewsWrapper {
     display: flex;
     width: 95%;
-    height: 70vh;
+    height: 50vh;
 }
 
 .viewsMenu {
@@ -72,4 +72,35 @@
 .viewFinder {
     display: block;
     height: 90%;
+}
+
+.tnmBar {
+    display: flex;
+    width: 95%;
+    height: 10vh;
+    background-color: white;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.taskHQ {
+    display: flex;
+    width: 50%;
+    border-right: solid;
+    border-color: black;
+    justify-content: space-around;
+    align-items: baseline;
+}
+
+.messageHQ {
+    display: flex;
+    width: 50%;
+    border-left: solid;
+    border-color: black;
+    justify-content: center;
+}
+
+.escrowCounter {
+    margin-bottom: 15px;
 }
