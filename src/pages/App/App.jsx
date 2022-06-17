@@ -48,7 +48,7 @@ export default function App() {
                 <TransactionPage transactions={transactions} user={user} setRerender={setRerender} showForm={showForm} setShowForm={setShowForm} usersRef={usersRef} />
             </Route>
             <Route exact path="/transactions/:id">
-                <TransactionDetail transactions={transactions} />
+                <TransactionDetail transaction={transactions} />
             </Route>
             <Redirect to="/transactions" />
         </> : <AuthPage setUser={setUser} rerender={rerender} setRerender={setRerender} />}
