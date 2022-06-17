@@ -2,10 +2,10 @@ import { useState } from 'react';
 import MessageItem from '../MessageItem/MessageItem';
 import * as transactionsAPI from '../../utilities/transaction-api'
 
-function MessageFeed({ taskID, transactionID }) {
+function MessageFeed({ taskID, transactionID, taskMessages }) {
 
     const [messageFormData, setMessageFormData] = useState("")
-    const [messages, setMessages] = useState([]);
+    const [messages, setMessages] = useState(taskMessages);
 
     function handleChange(evt) {
         setMessageFormData(evt.target.value)
@@ -20,14 +20,15 @@ function MessageFeed({ taskID, transactionID }) {
         };
         const newMessage = await transactionsAPI.createMessage(payload);
         setMessages([...messages, newMessage]);
+        setMessageFormData("");
     }
 
     return (
         <div>
             <h4>Messages</h4>
+            {(messages.length > 0) ? messages.map((ele, idx) => <MessageItem message={ele} key={ele._id} />) : ""}
             <form onSubmit={handleMessageSubmit}>
-                <textarea rows="3" name="body" onChange={handleChange}></textarea>
-                {messageFormData}
+                <textarea rows="3" name="body" onChange={handleChange} value={messageFormData}></textarea>
                 <button type="submit">Send Message</button>
             </form>
         </div>

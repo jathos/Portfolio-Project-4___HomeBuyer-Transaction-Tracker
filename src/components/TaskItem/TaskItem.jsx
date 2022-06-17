@@ -13,7 +13,7 @@ function TaskItem({ task, transactionID }) {
                 <h3>{task.subject}</h3>
                 <p>Due Date: {dueDate}</p>
             </div>
-            {hideBody ? "" : <><p>{task.body}</p><MessageFeed taskID={task._id} transactionID={transactionID} /></>}
+            {hideBody ? "" : <><p>{task.body}</p><MessageFeed taskMessages={task.messages} taskID={task._id} transactionID={transactionID} /></>}
         </div>
     );
 };
