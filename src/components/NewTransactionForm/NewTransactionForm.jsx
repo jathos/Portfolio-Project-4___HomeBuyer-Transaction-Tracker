@@ -18,7 +18,7 @@ function NewTransactionForm({ setShowForm }) {
         setFormData(newState)
     }
 
-    async function handleTransactionSubmit(evt) {
+    async function handleTaskSubmit(evt) {
         evt.preventDefault();
         const transaction = await transactionsAPI.createTransaction(formData);
         setShowForm(false)
@@ -27,7 +27,7 @@ function NewTransactionForm({ setShowForm }) {
     return (
         <div>
             <button onClick={() => setShowForm(false)}>Back</button>
-            <form onSubmit={handleTransactionSubmit}>
+            <form onSubmit={handleTaskSubmit}>
                 <label>Street</label>
                 <input name="street" onChange={handleChange} />
                 <label>City</label>

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import MessageFeed from '../MessageFeed/MessageFeed';
 
 function TaskItem({ task }) {
 
@@ -10,7 +11,7 @@ function TaskItem({ task }) {
         <div className="taskItem" onClick={() => setHideBody(!hideBody)}>
             <h3>{task.subject}</h3>
             <p>Due Date: {dueDate}</p>
-            {hideBody ? "" : <p>{task.body}</p>}
+            {hideBody ? "" : <><p>{task.body}</p><MessageFeed /></>}
         </div>
     );
 };

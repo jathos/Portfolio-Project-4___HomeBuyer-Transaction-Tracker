@@ -21,3 +21,7 @@ export function getUserTransactions() {
 export function createTask(formData) {
     return sendRequest(`${BASE_URL}/:id/task`, 'POST', formData)
 }
+
+export function createMessage() {
+
+}

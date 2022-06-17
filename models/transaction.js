@@ -1,12 +1,19 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+const messageSchema = new Schema({
+    recipient: String,
+    body: { type: String, required: true },
+    unread: { type: Boolean, default: true }
+})
+
 const taskSchema = new Schema({
     subject: { type: String, required: true },
     body: { type: String, required: true },
     dueDate: { type: Date, required: true },
     isUrgent: { type: Boolean, default: false },
-    isCompleted: { type: Boolean, default: false }
+    isCompleted: { type: Boolean, default: false },
+    messages: [messageSchema]
 });
 
 const transactionSchema = new Schema({

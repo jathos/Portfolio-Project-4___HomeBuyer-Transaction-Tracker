@@ -14,8 +14,6 @@ function TransactionDetail({ transaction, user }) {
     const { id } = useParams();
     const [tasks, setTasks] = useState(transaction[id].tasks);
 
-    console.log("these are the tasks: ", tasks)
-
     return (
         <>
             <h1>{transaction[id].street}, {transaction[id].address}</h1>
