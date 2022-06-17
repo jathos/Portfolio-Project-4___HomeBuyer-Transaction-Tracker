@@ -21,7 +21,7 @@ function TransactionDetail({ transaction, user }) {
             <TNMBar user={user} showView={showView} setShowView={setShowView} />
             {showView ? <div className="viewsWrapper">
                 <TransactionMenu setView={setView} setViewFinder={setViewFinder} />
-                <TransactionViewFinder view={view} viewFinder={viewFinder} tasks={tasks} />
+                <TransactionViewFinder view={view} viewFinder={viewFinder} tasks={tasks} transactionID={transaction[id]._id} />
             </div>
                 :
                 <NewTaskForm id={transaction[id]._id} tasks={tasks} setTasks={setTasks} view={view} setShowView={setShowView} />}

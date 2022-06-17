@@ -6,7 +6,8 @@ module.exports = {
     getAll,
     assignUser,
     getUserTransactions,
-    createTask
+    createTask,
+    createMessage
 };
 
 async function create(req, res) {
@@ -44,4 +45,17 @@ async function createTask(req, res) {
     doc.tasks.push(newTask);
     await doc.save();
     res.json(newTask);
+};
+
+async function createMessage(req, res) {
+    const doc = await Transaction.findOne({ _id: req.body.transactionID });
+    const recipient = (req.user.isAdmin == true ? "Client" : "Agent");
+    const newMessage = {
+        recipient: recipient,
+        body: req.body.body,
+        unread: true
+    }
+    doc.tasks.id(req.body.taskID).messages.push(newMessage);
+    doc.save();
+    res.json(newMessage);
 }

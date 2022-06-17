@@ -22,6 +22,6 @@ export function createTask(formData) {
     return sendRequest(`${BASE_URL}/:id/task`, 'POST', formData)
 }
 
-export function createMessage() {
-
+export function createMessage(payload) {
+    return sendRequest(`${BASE_URL}/:id/message`, 'POST', payload)
 }

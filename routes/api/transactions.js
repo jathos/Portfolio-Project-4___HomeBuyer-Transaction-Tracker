@@ -5,7 +5,8 @@ const transactionsCtrl = require('../../controllers/api/transactions');
 router.get('/', transactionsCtrl.getAll);
 router.get('/user', transactionsCtrl.getUserTransactions);
 router.post('/', transactionsCtrl.create);
-router.post('/:id/task', transactionsCtrl.createTask)
+router.post('/:id/task', transactionsCtrl.createTask);
+router.post('/:id/message', transactionsCtrl.createMessage);
 router.put('/', transactionsCtrl.assignUser);
 
 module.exports = router;

@@ -116,7 +116,12 @@
     gap: 2px;
 }
 
-.taskItem>h3,
+.taskHeader {
+    display: flex;
+    flex-direction: column;
+}
+
+.taskHeader>h3,
 p {
     display: flex;
     margin: 0;
