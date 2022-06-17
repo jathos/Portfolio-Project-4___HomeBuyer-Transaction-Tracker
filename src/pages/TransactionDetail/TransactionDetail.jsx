@@ -11,8 +11,10 @@ function TransactionDetail({ transaction, user }) {
     const [view, setView] = useState("");
     const [viewFinder, setViewFinder] = useState("");
     const [showView, setShowView] = useState(true);
-    const [tasks, setTasks] = useState([]);
     const { id } = useParams();
+    const [tasks, setTasks] = useState(transaction[id].tasks);
+
+    console.log("these are the tasks: ", tasks)
 
     return (
         <>
@@ -21,7 +23,7 @@ function TransactionDetail({ transaction, user }) {
             <TNMBar user={user} showView={showView} setShowView={setShowView} />
             {showView ? <div className="viewsWrapper">
                 <TransactionMenu setView={setView} setViewFinder={setViewFinder} />
-                <TransactionViewFinder view={view} viewFinder={viewFinder} />
+                <TransactionViewFinder view={view} viewFinder={viewFinder} tasks={tasks} />
             </div>
                 :
                 <NewTaskForm id={transaction[id]._id} tasks={tasks} setTasks={setTasks} view={view} setShowView={setShowView} />}
