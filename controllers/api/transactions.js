@@ -5,7 +5,8 @@ module.exports = {
     create,
     getAll,
     assignUser,
-    getUserTransactions
+    getUserTransactions,
+    createTask
 };
 
 async function create(req, res) {
@@ -30,3 +31,16 @@ async function getUserTransactions(req, res) {
     console.log(doc);
     res.json(doc);
 };
+
+async function createTask(req, res) {
+    const doc = await Transaction.findOne({ _id: req.body.id });
+    const newTask = {
+        subject: req.body.subject,
+        body: req.body.body,
+        dueDate: req.body.dueDate,
+        isUrgent: req.body.isUrgent
+    };
+    doc.tasks.push(newTask);
+    await doc.save();
+    res.json(doc);
+}

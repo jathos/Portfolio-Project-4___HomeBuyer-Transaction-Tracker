@@ -17,3 +17,7 @@ export function assignUser(payload) {
 export function getUserTransactions() {
     return sendRequest(`${BASE_URL}/user`)
 }
+
+export function createTask(formData) {
+    return sendRequest(`${BASE_URL}/:id/task`, 'POST', formData)
+}

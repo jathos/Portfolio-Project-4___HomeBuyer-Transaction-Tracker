@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import * as transactionsAPI from '../../utilities/transaction-api'
 
-function NewTaskForm({ }) {
+function NewTaskForm({ tasks, setTasks, id, showView, setShowView }) {
     const [taskFormData, setTaskFormData] = useState({
-        street: "",
-        city: "",
-        state: "",
-        zip: "",
-        closeDate: null
+        subject: "",
+        body: "",
+        dueDate: null,
+        isUrgent: false,
+        id: id
     })
 
     function handleChange(evt) {
@@ -17,25 +17,23 @@ function NewTaskForm({ }) {
 
     async function handleTransactionSubmit(evt) {
         evt.preventDefault();
-        const transaction = await transactionsAPI.createTransaction(taskFormData);
-        // setShowForm(false)
+        const newTask = await transactionsAPI.createTask(taskFormData);
+        setTasks([...tasks, newTask]);
+        setShowView(!showView);
     }
 
     return (
         <div>
-            {/* <button onClick={() => setShowView(false)}>Back</button> */}
             <form onSubmit={handleTransactionSubmit}>
-                <label>Street</label>
-                <input name="street" onChange={handleChange} />
-                <label>City</label>
-                <input name="city" onChange={handleChange} />
-                <label>State</label>
-                <input name="state" onChange={handleChange} />
-                <label>Zip</label>
-                <input name="zip" onChange={handleChange} />
-                <label>Close Date</label>
-                <input type="date" name="closeDate" onChange={handleChange} />
-                <button type="submit">Create Transaction</button>
+                <label>Task Name</label>
+                <input name="subject" onChange={handleChange} />
+                <label>Task Description</label>
+                <textarea name="body" rows="4" onChange={handleChange}></textarea>
+                <label>Due Date</label>
+                <input type="date" name="dueDate" onChange={handleChange} />
+                <label>Urgent?</label>
+                <input type="checkbox" name="isUrgent" onChange={handleChange} />
+                <button type="submit">Add Task</button>
             </form>
         </div>
     );

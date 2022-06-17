@@ -5,9 +5,9 @@ const taskSchema = new Schema({
     subject: { type: String, required: true },
     body: { type: String, required: true },
     dueDate: { type: Date, required: true },
-    isUrgent: Boolean,
-    isCompleted: Boolean
-})
+    isUrgent: { type: Boolean, default: false },
+    isCompleted: { type: Boolean, default: false }
+});
 
 const transactionSchema = new Schema({
     street: { type: String, required: true },
@@ -24,6 +24,6 @@ const transactionSchema = new Schema({
 
 transactionSchema.virtual('address').get(function () {
     return (this.city + ", " + this.state.toUpperCase() + " " + this.zip)
-})
+});
 
 module.exports = mongoose.model('Transaction', transactionSchema)

@@ -8,9 +8,10 @@ import NewTaskForm from '../../components/NewTaskForm/NewTaskForm';
 import './TransactionDetail.css'
 
 function TransactionDetail({ transaction, user }) {
-    const [view, setView] = useState("Tasks")
-    const [viewFinder, setViewFinder] = useState("")
-    const [showView, setShowView] = useState(true)
+    const [view, setView] = useState("");
+    const [viewFinder, setViewFinder] = useState("");
+    const [showView, setShowView] = useState(true);
+    const [tasks, setTasks] = useState([]);
     const { id } = useParams();
 
     return (
@@ -23,7 +24,7 @@ function TransactionDetail({ transaction, user }) {
                 <TransactionViewFinder view={view} viewFinder={viewFinder} />
             </div>
                 :
-                <NewTaskForm />}
+                <NewTaskForm id={transaction[id]._id} tasks={tasks} setTasks={setTasks} view={view} setShowView={setShowView} />}
 
         </>
     );
