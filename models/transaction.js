@@ -23,7 +23,8 @@ const transactionSchema = new Schema({
     zip: { type: String, required: true },
     closeDate: { type: Date, required: true },
     user: { type: Schema.Types.ObjectId, ref: 'User' },
-    tasks: [taskSchema]
+    tasks: [taskSchema],
+    acceptanceDate: { type: Date, required: true }
 }, {
     timestamps: true,
     toJSON: { virtuals: true }
