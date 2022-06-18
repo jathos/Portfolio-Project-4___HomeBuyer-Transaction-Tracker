@@ -17,7 +17,7 @@ function TransactionDetail({ transaction, user }) {
     return (
         <>
             <h1>{transaction[id].street}, {transaction[id].address}</h1>
-            <EscrowCounter date={transaction[id].closeDate} />
+            <EscrowCounter end={transaction[id].closeDate} start={transaction[id].acceptanceDate} />
             <TNMBar user={user} showView={showView} setShowView={setShowView} />
             {showView ? <div className="viewsWrapper">
                 <TransactionMenu setView={setView} setViewFinder={setViewFinder} />

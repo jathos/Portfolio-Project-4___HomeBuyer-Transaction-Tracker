@@ -1,7 +1,7 @@
-function EscrowDayPassed() {
+function EscrowDayPassed({ ele }) {
     return (
-        <div>
-
+        <div className="dayPassed">
+            {ele}
         </div>
     );
 };
