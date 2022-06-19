@@ -141,13 +141,21 @@
 
 .taskHeader {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
 }
 
-.taskHeader>h3,
+.taskTitle>h3,
 p {
     display: flex;
     margin: 0;
+}
+
+.taskTitle {
+    width: 75%;
+}
+
+.taskComplete {
+    color: green;
 }
 
 .messageRight {
