@@ -7,12 +7,11 @@ import TNMBar from '../../components/TNMBar/TNMBar';
 import NewTaskForm from '../../components/NewTaskForm/NewTaskForm';
 import './TransactionDetail.css'
 
-function TransactionDetail({ transaction, user }) {
+function TransactionDetail({ transaction, user, rerender, setRerender }) {
     const [view, setView] = useState("");
     const [viewFinder, setViewFinder] = useState("");
     const [showView, setShowView] = useState(true);
     const { id } = useParams();
-    const [tasks, setTasks] = useState(transaction[id].tasks);
 
     return (
         <>
@@ -21,10 +20,10 @@ function TransactionDetail({ transaction, user }) {
             <TNMBar user={user} showView={showView} setShowView={setShowView} />
             {showView ? <div className="viewsWrapper">
                 <TransactionMenu setView={setView} setViewFinder={setViewFinder} />
-                <TransactionViewFinder view={view} viewFinder={viewFinder} tasks={tasks} transactionID={transaction[id]._id} />
+                <TransactionViewFinder view={view} viewFinder={viewFinder} tasks={transaction[id].tasks} transactionID={transaction[id]._id} rerender={rerender} setRerender={setRerender} />
             </div>
                 :
-                <NewTaskForm id={transaction[id]._id} tasks={tasks} setTasks={setTasks} view={view} setShowView={setShowView} />}
+                <NewTaskForm id={transaction[id]._id} rerender={rerender} setRerender={setRerender} view={view} setShowView={setShowView} />}
 
         </>
     );

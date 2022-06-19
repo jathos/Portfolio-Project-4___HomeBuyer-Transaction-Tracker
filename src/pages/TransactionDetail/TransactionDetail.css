@@ -161,3 +161,14 @@ p {
     text-align: left;
     margin: 1px;
 }
+
+.messageForm {
+    grid-template-columns: 99%;
+}
+
+textarea {
+    margin-top: 7px;
+    display: block;
+    columns: 300;
+    resize: none;
+}

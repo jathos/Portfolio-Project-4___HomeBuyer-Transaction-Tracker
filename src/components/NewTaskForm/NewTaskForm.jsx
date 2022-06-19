@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import * as transactionsAPI from '../../utilities/transaction-api'
 
-function NewTaskForm({ tasks, setTasks, id, showView, setShowView }) {
+function NewTaskForm({ rerender, setRerender, id, showView, setShowView }) {
     const [taskFormData, setTaskFormData] = useState({
         subject: "",
         body: "",
@@ -18,7 +18,7 @@ function NewTaskForm({ tasks, setTasks, id, showView, setShowView }) {
     async function handleTransactionSubmit(evt) {
         evt.preventDefault();
         const newTask = await transactionsAPI.createTask(taskFormData);
-        setTasks([...tasks, newTask]);
+        setRerender(!rerender);
         setShowView(!showView);
     }
 
