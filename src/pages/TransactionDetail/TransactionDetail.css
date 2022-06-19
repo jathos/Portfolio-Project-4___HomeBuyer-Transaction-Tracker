@@ -97,8 +97,6 @@
 .messageHQ {
     display: flex;
     width: 50%;
-    border-left: solid;
-    border-color: black;
     justify-content: center;
 }
 
