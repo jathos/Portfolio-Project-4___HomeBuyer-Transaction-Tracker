@@ -180,3 +180,8 @@ textarea {
     columns: 300;
     resize: none;
 }
+
+.numIncomplete {
+    font-weight: bold;
+    color: red;
+}
