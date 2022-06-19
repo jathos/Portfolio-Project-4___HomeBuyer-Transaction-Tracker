@@ -1,6 +1,9 @@
 import TaskItem from "../TaskItem/TaskItem";
 
 function TransactionViewFinder({ view, viewFinder, tasks, transactionID, rerender, setRerender }) {
+
+    const sortedTasks = tasks.sort((a, b) => Number(a.isCompleted) - Number(b.isCompleted));
+
     return (
         <div className="selectionView">
             <div className="viewHeader">{view}</div>
