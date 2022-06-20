@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import NewContactForm from '../NewContactForm/NewContactForm';
+import ContactItem from '../ContactItem/ContactItem';
 import * as transactionAPI from '../../utilities/transaction-api'
 
 function ContactsView({ user, rerender, setRerender, contacts, transactionID, transactionContacts }) {
-    console.log(transactionContacts);
 
     const [contactForm, setContactForm] = useState("");
 
@@ -15,18 +15,18 @@ function ContactsView({ user, rerender, setRerender, contacts, transactionID, tr
         }
         const assignContact = await transactionAPI.assignContact(payload);
         setRerender(!rerender);
-    }
+    };
 
     function handleChange(evt) {
         setContactForm(evt.target.value);
-    }
+    };
 
     return (
         <div className="contactsViewWrapper">
             <NewContactForm user={user} rerender={rerender} setRerender={setRerender} />
             <div className="contactsView">
                 <h4>Escrow Officer</h4><hr></hr>
-                <p>{transactionContacts[0].name}</p>
+                {transactionContacts.map(ele => (ele.role === "escrow") ? <ContactItem contact={ele} /> : null)}
                 {user.isAdmin ? <><form onSubmit={assignContact}>
                     <select onChange={handleChange}>
                         <option value="">Select a Contact</option>
@@ -40,12 +40,13 @@ function ContactsView({ user, rerender, setRerender, contacts, transactionID, tr
                     </>
                 }
                 <h4>Title Officer</h4><hr></hr>
-                {user.isAdmin ? <><form>
-                    <select>
+                {transactionContacts.map(ele => (ele.role === "title") ? <ContactItem contact={ele} /> : null)}
+                {user.isAdmin ? <><form onSubmit={assignContact}>
+                    <select onChange={handleChange}>
                         <option value="">Select a Contact</option>
-                        {contacts.title.map(ele => <option>{ele.name}</option>)}
+                        {contacts.title.map(ele => <option value={ele._id}>{ele.name}</option>)}
                     </select>
-                    <button>Add</button>
+                    <button type="submit">Add</button>
                 </form>
                 </> :
                     <>
@@ -53,12 +54,13 @@ function ContactsView({ user, rerender, setRerender, contacts, transactionID, tr
                     </>
                 }
                 <h4>Mortgage Officer</h4><hr></hr>
-                {user.isAdmin ? <><form>
-                    <select>
+                {transactionContacts.map(ele => (ele.role === "lender") ? <ContactItem contact={ele} /> : null)}
+                {user.isAdmin ? <><form onSubmit={assignContact}>
+                    <select onChange={handleChange}>
                         <option value="">Select a Contact</option>
-                        {contacts.mortgage.map(ele => <option>{ele.name}</option>)}
+                        {contacts.mortgage.map(ele => <option value={ele._id}>{ele.name}</option>)}
                     </select>
-                    <button>Add</button>
+                    <button type="submit">Add</button>
                 </form>
                 </> :
                     <>
@@ -66,12 +68,13 @@ function ContactsView({ user, rerender, setRerender, contacts, transactionID, tr
                     </>
                 }
                 <h4>Transaction Coordinator</h4><hr></hr>
-                {user.isAdmin ? <><form>
-                    <select>
+                {transactionContacts.map(ele => (ele.role === "tc") ? <ContactItem contact={ele} /> : null)}
+                {user.isAdmin ? <><form onSubmit={assignContact}>
+                    <select onChange={handleChange}>
                         <option value="">Select a Contact</option>
-                        {contacts.tc.map(ele => <option>{ele.name}</option>)}
+                        {contacts.tc.map(ele => <option value={ele._id}>{ele.name}</option>)}
                     </select>
-                    <button>Add</button>
+                    <button type="submit">Add</button>
                 </form>
                 </> :
                     <>
@@ -79,12 +82,13 @@ function ContactsView({ user, rerender, setRerender, contacts, transactionID, tr
                     </>
                 }
                 <h4>Vendors</h4><hr></hr>
-                {user.isAdmin ? <><form>
-                    <select>
+                {transactionContacts.map(ele => (ele.role === "vendor") ? <ContactItem contact={ele} /> : null)}
+                {user.isAdmin ? <><form onSubmit={assignContact}>
+                    <select onChange={handleChange}>
                         <option value="">Select a Contact</option>
-                        {contacts.vendor.map(ele => <option>{ele.name}</option>)}
+                        {contacts.vendor.map(ele => <option value={ele._id}>{ele.name}</option>)}
                     </select>
-                    <button>Add</button>
+                    <button type="submit">Add</button>
                 </form>
                 </> :
                     <>
@@ -92,7 +96,7 @@ function ContactsView({ user, rerender, setRerender, contacts, transactionID, tr
                     </>
                 }
             </div>
-        </div>
+        </div >
     );
 };
 
