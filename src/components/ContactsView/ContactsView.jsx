@@ -1,35 +1,23 @@
-import { useRef, useEffect, useState } from 'react';
+import { useState } from 'react';
 import NewContactForm from '../NewContactForm/NewContactForm';
-import * as contactAPI from '../../utilities/contact-api'
+import * as transactionAPI from '../../utilities/transaction-api'
 
-function ContactsView({ user, rerender, setRerender, contacts }) {
+function ContactsView({ user, rerender, setRerender, contacts, transactionID }) {
 
-    // const contactsRef = useRef([]);
+    const [contactForm, setContactForm] = useState("");
 
-    // const escrowContacts = [];
-    // const titleContacts = [];
-    // const mortgageContacts = [];
-    // const tcContacts = [];
-    // const vendorContacts = [];
+    async function assignContact(evt) {
+        evt.preventDefault();
+        const payload = {
+            contact: contactForm,
+            transaction: transactionID
+        }
+        const assignContact = await transactionAPI.assignContact(payload);
+        setRerender(!rerender);
+    }
 
-
-
-    // contactsRef.current.forEach(function (ele) {
-    //     if (ele.role === "escrow") {
-    //         escrowContacts.push(ele)
-    //     } else if (ele.role === "title") {
-    //         titleContacts.push(ele)
-    //     } else if (ele.role === "lender") {
-    //         mortgageContacts.push(ele)
-    //     } else if (ele.role === "tc") {
-    //         tcContacts.push(ele)
-    //     } else {
-    //         vendorContacts.push(ele)
-    //     }
-    // });
-
-    async function assignContact() {
-
+    function handleChange(evt) {
+        setContactForm(evt.target.value);
     }
 
     return (
@@ -38,8 +26,9 @@ function ContactsView({ user, rerender, setRerender, contacts }) {
             <div className="contactsView">
                 <h4>Escrow Officer</h4><hr></hr>
                 {user.isAdmin ? <><form onSubmit={assignContact}>
-                    <select>
-                        {contacts.escrow.map(ele => <option>{ele.name}</option>)}
+                    <select onChange={handleChange}>
+                        <option value="">Select a Contact</option>
+                        {contacts.escrow.map(ele => <option value={ele._id}>{ele.name}</option>)}
                     </select>
                     <button type="submit">Add</button>
                 </form>
@@ -51,6 +40,7 @@ function ContactsView({ user, rerender, setRerender, contacts }) {
                 <h4>Title Officer</h4><hr></hr>
                 {user.isAdmin ? <><form>
                     <select>
+                        <option value="">Select a Contact</option>
                         {contacts.title.map(ele => <option>{ele.name}</option>)}
                     </select>
                     <button>Add</button>
@@ -63,6 +53,7 @@ function ContactsView({ user, rerender, setRerender, contacts }) {
                 <h4>Mortgage Officer</h4><hr></hr>
                 {user.isAdmin ? <><form>
                     <select>
+                        <option value="">Select a Contact</option>
                         {contacts.mortgage.map(ele => <option>{ele.name}</option>)}
                     </select>
                     <button>Add</button>
@@ -75,6 +66,7 @@ function ContactsView({ user, rerender, setRerender, contacts }) {
                 <h4>Transaction Coordinator</h4><hr></hr>
                 {user.isAdmin ? <><form>
                     <select>
+                        <option value="">Select a Contact</option>
                         {contacts.tc.map(ele => <option>{ele.name}</option>)}
                     </select>
                     <button>Add</button>
@@ -87,6 +79,7 @@ function ContactsView({ user, rerender, setRerender, contacts }) {
                 <h4>Vendors</h4><hr></hr>
                 {user.isAdmin ? <><form>
                     <select>
+                        <option value="">Select a Contact</option>
                         {contacts.vendor.map(ele => <option>{ele.name}</option>)}
                     </select>
                     <button>Add</button>

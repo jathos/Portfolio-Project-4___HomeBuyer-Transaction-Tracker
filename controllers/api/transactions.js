@@ -7,7 +7,8 @@ module.exports = {
     assignUser,
     getUserTransactions,
     createTask,
-    createMessage
+    createMessage,
+    assignContact
 };
 
 async function create(req, res) {
@@ -58,4 +59,11 @@ async function createMessage(req, res) {
     doc.tasks.id(req.body.taskID).messages.push(newMessage);
     doc.save();
     res.json(newMessage);
+}
+
+async function assignContact(req, res) {
+    const doc = await Transaction.findOne({ _id: req.body.transaction });
+    doc.contacts.push(req.body.contact);
+    doc.save();
+    res.json(doc);
 }

@@ -8,5 +8,6 @@ router.post('/', transactionsCtrl.create);
 router.post('/:id/task', transactionsCtrl.createTask);
 router.post('/:id/message', transactionsCtrl.createMessage);
 router.put('/', transactionsCtrl.assignUser);
+router.put('/:id/contact', transactionsCtrl.assignContact);
 
 module.exports = router;

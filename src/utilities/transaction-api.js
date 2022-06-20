@@ -15,13 +15,17 @@ export function assignUser(payload) {
 };
 
 export function getUserTransactions() {
-    return sendRequest(`${BASE_URL}/user`)
-}
+    return sendRequest(`${BASE_URL}/user`);
+};
 
 export function createTask(formData) {
-    return sendRequest(`${BASE_URL}/:id/task`, 'POST', formData)
-}
+    return sendRequest(`${BASE_URL}/:id/task`, 'POST', formData);
+};
 
 export function createMessage(payload) {
-    return sendRequest(`${BASE_URL}/:id/message`, 'POST', payload)
-}
+    return sendRequest(`${BASE_URL}/:id/message`, 'POST', payload);
+};
+
+export function assignContact(payload) {
+    return sendRequest(`${BASE_URL}/:id/contact`, 'PUT', payload);
+};
