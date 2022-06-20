@@ -200,6 +200,9 @@ textarea {
 
 .contactsView {
     width: 50%;
+    display: block;
+    overflow: auto;
+    padding: 0px 4px 0px 4px;
 }
 
 .errorMessage {
