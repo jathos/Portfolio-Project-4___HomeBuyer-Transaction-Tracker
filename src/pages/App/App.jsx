@@ -7,6 +7,7 @@ import TransactionDetail from "../TransactionDetail/TransactionDetail";
 import NavBar from "../../components/NavBar/NavBar";
 import * as transactionsAPI from '../../utilities/transaction-api';
 import * as usersAPI from '../../utilities/users-api';
+import * as contactAPI from '../../utilities/contact-api';
 import './App.css';
 
 export default function App() {
@@ -14,6 +15,7 @@ export default function App() {
     const [showForm, setShowForm] = useState(false);
     const [transactions, setTransactions] = useState([]);
     const [rerender, setRerender] = useState(false);
+    const [contacts, setContacts] = useState([]);
     const usersRef = useRef([]);
 
 
@@ -41,6 +43,15 @@ export default function App() {
         getTransactions();
     }, [showForm, rerender, user]);
 
+    useEffect(function () {
+        console.log("getting contacts...")
+        async function getAllContacts() {
+            const allContacts = await contactAPI.getAllContacts();
+            setContacts(allContacts);
+        }
+        getAllContacts();
+    }, [user, rerender]);
+
     return (<main className="App">
         {user ? <>
             <NavBar user={user} setUser={setUser} />
@@ -48,7 +59,7 @@ export default function App() {
                 <TransactionPage transactions={transactions} user={user} setRerender={setRerender} showForm={showForm} setShowForm={setShowForm} usersRef={usersRef} />
             </Route>
             <Route exact path="/transactions/:id">
-                <TransactionDetail transaction={transactions} user={user} rerender={rerender} setRerender={setRerender} />
+                <TransactionDetail transaction={transactions} user={user} rerender={rerender} setRerender={setRerender} contacts={contacts} />
             </Route>
             <Redirect to="/transactions" />
         </> : <AuthPage setUser={setUser} rerender={rerender} setRerender={setRerender} />}

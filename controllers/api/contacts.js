@@ -13,6 +13,5 @@ async function createContact(req, res) {
 
 async function getAllContacts(req, res) {
     const allContacts = await Contact.find({});
-    console.log(allContacts);
     res.json(allContacts);
 }

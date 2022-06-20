@@ -2,42 +2,31 @@ import { useRef, useEffect, useState } from 'react';
 import NewContactForm from '../NewContactForm/NewContactForm';
 import * as contactAPI from '../../utilities/contact-api'
 
-function ContactsView({ user, rerender, setRerender }) {
-    console.log("rendering contacts view")
+function ContactsView({ user, rerender, setRerender, contacts }) {
 
-    const contactsRef = useRef([]);
+    // const contactsRef = useRef([]);
 
-    const escrowRef = useRef([]);
-    const titleContacts = [];
-    const mortgageContacts = [];
-    const tcContacts = [];
-    const vendorContacts = [];
+    // const escrowContacts = [];
+    // const titleContacts = [];
+    // const mortgageContacts = [];
+    // const tcContacts = [];
+    // const vendorContacts = [];
 
-    useEffect(function () {
-        console.log("getting contacts...")
-        async function getAllContacts() {
-            const allContacts = await contactAPI.getAllContacts();
-            contactsRef.current = allContacts;
-            console.log(escrowRef.current)
-        }
-        getAllContacts();
-    });
 
-    contactsRef.current.forEach(function (ele) {
-        console.log("for each")
-        if (ele.role == "escrow") {
-            escrowRef.current.push(ele)
-            console.log(escrowRef.current)
-        } else if (ele.role == "title") {
-            titleContacts.push(ele)
-        } else if (ele.role == "lender") {
-            mortgageContacts.push(ele)
-        } else if (ele.role == "tc") {
-            tcContacts.push(ele)
-        } else {
-            vendorContacts.push(ele)
-        }
-    });
+
+    // contactsRef.current.forEach(function (ele) {
+    //     if (ele.role === "escrow") {
+    //         escrowContacts.push(ele)
+    //     } else if (ele.role === "title") {
+    //         titleContacts.push(ele)
+    //     } else if (ele.role === "lender") {
+    //         mortgageContacts.push(ele)
+    //     } else if (ele.role === "tc") {
+    //         tcContacts.push(ele)
+    //     } else {
+    //         vendorContacts.push(ele)
+    //     }
+    // });
 
     async function assignContact() {
 
@@ -50,7 +39,7 @@ function ContactsView({ user, rerender, setRerender }) {
                 <h4>Escrow Officer</h4><hr></hr>
                 {user.isAdmin ? <><form onSubmit={assignContact}>
                     <select>
-                        {escrowRef.current.map(ele => <option>{ele.name}</option>)}
+                        {contacts.escrow.map(ele => <option>{ele.name}</option>)}
                     </select>
                     <button type="submit">Add</button>
                 </form>
@@ -62,7 +51,7 @@ function ContactsView({ user, rerender, setRerender }) {
                 <h4>Title Officer</h4><hr></hr>
                 {user.isAdmin ? <><form>
                     <select>
-                        {titleContacts.map(ele => <option>{ele.name}</option>)}
+                        {contacts.title.map(ele => <option>{ele.name}</option>)}
                     </select>
                     <button>Add</button>
                 </form>
@@ -74,7 +63,7 @@ function ContactsView({ user, rerender, setRerender }) {
                 <h4>Mortgage Officer</h4><hr></hr>
                 {user.isAdmin ? <><form>
                     <select>
-                        {mortgageContacts.map(ele => <option>{ele.name}</option>)}
+                        {contacts.mortgage.map(ele => <option>{ele.name}</option>)}
                     </select>
                     <button>Add</button>
                 </form>
@@ -86,7 +75,7 @@ function ContactsView({ user, rerender, setRerender }) {
                 <h4>Transaction Coordinator</h4><hr></hr>
                 {user.isAdmin ? <><form>
                     <select>
-                        {tcContacts.map(ele => <option>{ele.name}</option>)}
+                        {contacts.tc.map(ele => <option>{ele.name}</option>)}
                     </select>
                     <button>Add</button>
                 </form>
@@ -98,7 +87,7 @@ function ContactsView({ user, rerender, setRerender }) {
                 <h4>Vendors</h4><hr></hr>
                 {user.isAdmin ? <><form>
                     <select>
-                        {vendorContacts.map(ele => <option>{ele.name}</option>)}
+                        {contacts.vendor.map(ele => <option>{ele.name}</option>)}
                     </select>
                     <button>Add</button>
                 </form>
