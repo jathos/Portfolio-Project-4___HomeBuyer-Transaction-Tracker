@@ -24,7 +24,8 @@ const transactionSchema = new Schema({
     closeDate: { type: Date, required: true },
     user: { type: Schema.Types.ObjectId, ref: 'User' },
     tasks: [taskSchema],
-    acceptanceDate: { type: Date, required: true }
+    acceptanceDate: { type: Date, required: true },
+    contacts: { type: Schema.Types.ObjectId, ref: 'Contact' }
 }, {
     timestamps: true,
     toJSON: { virtuals: true }

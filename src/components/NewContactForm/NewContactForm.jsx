@@ -17,7 +17,7 @@ function NewContactForm({ user }) {
 
     function handleSubmit(evt) {
         evt.preventDefault();
-        console.log(contactForm)
+        // const contact = await 
     }
 
     return (
