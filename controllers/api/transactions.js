@@ -29,7 +29,7 @@ async function assignUser(req, res) {
 };
 
 async function getUserTransactions(req, res) {
-    const doc = await Transaction.find({ user: req.user._id });
+    const doc = await Transaction.find({ user: req.user._id }).populate('contacts').exec();
     console.log(doc);
     res.json(doc);
 };

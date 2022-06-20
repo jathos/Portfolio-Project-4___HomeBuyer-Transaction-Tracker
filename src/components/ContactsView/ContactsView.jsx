@@ -35,9 +35,7 @@ function ContactsView({ user, rerender, setRerender, contacts, transactionID, tr
                     <button type="submit">Add</button>
                 </form>
                 </> :
-                    <>
-                        Description
-                    </>
+                    null
                 }
                 <h4>Title Officer</h4><hr></hr>
                 {transactionContacts.map(ele => (ele.role === "title") ? <ContactItem contact={ele} /> : null)}
