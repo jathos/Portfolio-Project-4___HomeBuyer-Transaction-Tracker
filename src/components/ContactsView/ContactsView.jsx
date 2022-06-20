@@ -2,7 +2,8 @@ import { useState } from 'react';
 import NewContactForm from '../NewContactForm/NewContactForm';
 import * as transactionAPI from '../../utilities/transaction-api'
 
-function ContactsView({ user, rerender, setRerender, contacts, transactionID }) {
+function ContactsView({ user, rerender, setRerender, contacts, transactionID, transactionContacts }) {
+    console.log(transactionContacts);
 
     const [contactForm, setContactForm] = useState("");
 
@@ -25,6 +26,7 @@ function ContactsView({ user, rerender, setRerender, contacts, transactionID }) 
             <NewContactForm user={user} rerender={rerender} setRerender={setRerender} />
             <div className="contactsView">
                 <h4>Escrow Officer</h4><hr></hr>
+                <p>{transactionContacts[0].name}</p>
                 {user.isAdmin ? <><form onSubmit={assignContact}>
                     <select onChange={handleChange}>
                         <option value="">Select a Contact</option>

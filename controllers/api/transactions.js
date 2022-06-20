@@ -17,7 +17,7 @@ async function create(req, res) {
 };
 
 async function getAll(req, res) {
-    const allTransactions = await Transaction.find({}).sort('closeDate');
+    const allTransactions = await Transaction.find({}).sort('closeDate').populate('contacts').exec();
     res.json(allTransactions);
 };
 
