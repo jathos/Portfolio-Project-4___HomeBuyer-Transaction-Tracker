@@ -8,7 +8,8 @@ function NewContactForm({ user, rerender, setRerender }) {
         name: "",
         company: "",
         phone: "",
-        email: ""
+        email: "",
+        error: ""
     });
 
     function handleChange(evt) {
@@ -18,16 +19,21 @@ function NewContactForm({ user, rerender, setRerender }) {
 
     async function handleSubmit(evt) {
         evt.preventDefault();
-        const contact = await contactAPI.createContact(contactForm);
-        setRerender(!rerender);
-        const blankForm = {
-            role: "",
-            name: "",
-            company: "",
-            phone: "",
-            email: ""
-        };
-        setContactForm(blankForm);
+        if (contactForm.role == "") {
+            setContactForm({ error: "Please select a role" })
+        } else {
+            const contact = await contactAPI.createContact(contactForm);
+            setRerender(!rerender);
+            const blankForm = {
+                role: "",
+                name: "",
+                company: "",
+                phone: "",
+                email: "",
+                error: ""
+            };
+            setContactForm(blankForm);
+        }
     }
 
     return (
@@ -54,7 +60,9 @@ function NewContactForm({ user, rerender, setRerender }) {
                         <label>Email</label>
                         <input name="email" onChange={handleChange} value={contactForm.email} />
                         <button type="submit">Create Contact</button>
-                    </form> </div> : null
+                    </form>
+                    <p className="errorMessage">{contactForm.error}</p>
+                </div> : null
             }
         </>
     );
