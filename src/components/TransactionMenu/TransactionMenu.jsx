@@ -5,9 +5,9 @@ function TransactionMenu({ setView, setViewFinder }) {
         setViewFinder("Tasks")
     };
 
-    function handleMessagesClick() {
-        setView("Messages");
-        setViewFinder("Messages")
+    function handleDictionaryClick() {
+        setView("Dictionary");
+        setViewFinder("Dictionary")
     };
     function handleContactsClick() {
         setView("Contacts");
@@ -20,8 +20,8 @@ function TransactionMenu({ setView, setViewFinder }) {
             <div className="menuHeader">Menu</div>
             <div className="menuItemWrapper">
                 <div className="menuItem" onClick={handleTasksClick}>Tasks</div>
-                <div className="menuItem" onClick={handleMessagesClick}>Messages</div>
                 <div className="menuItem" onClick={handleContactsClick}>Contacts</div>
+                <div className="menuItem" onClick={handleDictionaryClick}>Dictionary</div>
             </div>
         </div>
     );

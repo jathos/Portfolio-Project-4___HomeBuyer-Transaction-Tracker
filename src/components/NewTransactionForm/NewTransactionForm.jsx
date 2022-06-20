@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import * as transactionsAPI from '../../utilities/transaction-api'
+import * as transactionsAPI from '../../utilities/transaction-api';
 
 function NewTransactionForm({ setShowForm }) {
     const [formData, setFormData] = useState({
@@ -9,14 +9,14 @@ function NewTransactionForm({ setShowForm }) {
         state: "",
         zip: "",
         closeDate: null
-    })
+    });
 
     const history = useHistory();
 
     function handleChange(evt) {
-        const newState = { ...formData, [evt.target.name]: evt.target.value }
-        setFormData(newState)
-    }
+        const newState = { ...formData, [evt.target.name]: evt.target.value };
+        setFormData(newState);
+    };
 
     async function handleTaskSubmit(evt) {
         evt.preventDefault();

@@ -1,4 +1,4 @@
-function MessageHQ({ tasks }) {
+function MessageHQ({ tasks, user }) {
 
     let numUnread = 0;
     tasks.forEach(function (ele) {

@@ -183,3 +183,21 @@ textarea {
     font-weight: bold;
     color: red;
 }
+
+.contactsViewWrapper {
+    display: flex;
+    height: 100%;
+}
+
+.contactForm {
+    border-right: solid;
+    border-right-color: black;
+    width: 50%;
+    height: 100%;
+    margin-left: 7px;
+    padding-right: 5px;
+}
+
+.contactsView {
+    width: 50%;
+}

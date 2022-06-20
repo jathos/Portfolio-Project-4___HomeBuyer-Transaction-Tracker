@@ -5,7 +5,7 @@ function TNMBar({ user, showView, setShowView, transaction }) {
     return (
         <div className="tnmBar">
             <TaskHQ user={user} showView={showView} setShowView={setShowView} tasks={transaction.tasks} />
-            <MessageHQ tasks={transaction.tasks} />
+            <MessageHQ tasks={transaction.tasks} user={user}/>
         </div>
     );
 };

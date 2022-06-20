@@ -20,7 +20,7 @@ function TransactionDetail({ transaction, user, rerender, setRerender }) {
             <TNMBar user={user} showView={showView} setShowView={setShowView} transaction={transaction[id]} />
             {showView ? <div className="viewsWrapper">
                 <TransactionMenu setView={setView} setViewFinder={setViewFinder} />
-                <TransactionViewFinder view={view} viewFinder={viewFinder} tasks={transaction[id].tasks} transactionID={transaction[id]._id} rerender={rerender} setRerender={setRerender} />
+                <TransactionViewFinder view={view} viewFinder={viewFinder} tasks={transaction[id].tasks} transactionID={transaction[id]._id} rerender={rerender} setRerender={setRerender} user={user} />
             </div>
                 :
                 <NewTaskForm id={transaction[id]._id} rerender={rerender} setRerender={setRerender} view={view} setShowView={setShowView} />}
