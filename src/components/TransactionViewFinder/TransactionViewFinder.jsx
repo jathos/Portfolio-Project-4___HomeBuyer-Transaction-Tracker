@@ -9,7 +9,7 @@ function TransactionViewFinder({ view, viewFinder, tasks, transactionID, rerende
         <div className="selectionView">
             <div className="viewHeader">{view}</div>
             <div className="viewFinder">
-                {(viewFinder === "Dictionary") ? <>Dictionary Page</> : (viewFinder === "Tasks") ? tasks.map((ele, idx) => <TaskItem task={ele} key={idx} transactionID={transactionID} rerender={rerender} setRerender={setRerender} />) : (viewFinder === "Contacts") ? <ContactsView user={user} /> : <>Please make a selection from the menu</>}
+                {(viewFinder === "Dictionary") ? <>Dictionary Page</> : (viewFinder === "Tasks") ? tasks.map((ele, idx) => <TaskItem task={ele} key={idx} transactionID={transactionID} rerender={rerender} setRerender={setRerender} />) : (viewFinder === "Contacts") ? <ContactsView user={user} rerender={rerender} setRerender={setRerender} /> : <>Please make a selection from the menu</>}
             </div>
         </div>
     );
