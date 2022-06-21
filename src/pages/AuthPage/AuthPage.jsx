@@ -7,9 +7,11 @@ export default function AuthPage({ setUser, rerender, setRerender }) {
 
     return (
         <main>
-            <h1>AuthPage</h1>
-            <button onClick={() => setShowLogin(!showLogin)}>{showLogin ? 'Sign Up' : 'Log In'}</button>
-            {showLogin ? <LoginForm setUser={setUser} rerender={rerender} setRerender={setRerender} /> : <SignUpForm setUser={setUser} rerender={rerender} />}
+            <div className="loginWrapper">
+                <h1 className="welcome">WELCOME TO YOUR NEW HOME PURCHASE MANAGEMENT PORTAL</h1>
+                <button className="loginButton" onClick={() => setShowLogin(!showLogin)}>{showLogin ? 'Sign Up' : 'Log In'}</button>
+                {showLogin ? <LoginForm setUser={setUser} rerender={rerender} setRerender={setRerender} /> : <SignUpForm setUser={setUser} rerender={rerender} />}
+            </div>
         </main>
     );
 }

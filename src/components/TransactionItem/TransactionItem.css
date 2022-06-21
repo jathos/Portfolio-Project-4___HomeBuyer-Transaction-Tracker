@@ -1,13 +1,27 @@
 .TransactionItem {
     display: flex;
     flex-direction: column;
-    width: 49%;
+    align-items: center;
+    justify-content: center;
+    min-width: 30%;
+    max-width: 49%;
     border: solid;
-    border-color: black;
+    border-width: 3px;
+    background-color: #a8dadc;
     margin: 2px;
+    height: 30vh;
+    border-radius: 30px;
+    border-style: outset;
+    border-color: #1d3557;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.4);
+    color: #1d3557;
 }
 
 .userSelect {
     display: flex;
     justify-content: center;
+}
+
+.address {
+    margin: 0;
 }

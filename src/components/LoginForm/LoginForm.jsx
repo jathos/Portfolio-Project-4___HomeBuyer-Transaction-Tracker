@@ -1,7 +1,7 @@
-import {useState} from 'react';
+import { useState } from 'react';
 import * as usersService from '../../utilities/users-service';
 
-export default function LogIn({setUser}) {
+export default function LogIn({ setUser }) {
     const [credentials, setCredentials] = useState({
         email: '',
         password: ''
@@ -9,7 +9,7 @@ export default function LogIn({setUser}) {
     const [error, setError] = useState('');
 
     function handleChange(evt) {
-        setCredentials({...credentials, [evt.target.name]: evt.target.value});
+        setCredentials({ ...credentials, [evt.target.name]: evt.target.value });
         setError('');
     }
 
@@ -26,12 +26,12 @@ export default function LogIn({setUser}) {
     return (
         <div>
             <div className="form-container" onSubmit={handleSubmit}>
-                <form autoComplete="off">
+                <form className="loginForm" autoComplete="off">
                     <label>Email</label>
-                    <input type="text" name="email" value={credentials.email} onChange={handleChange} required/>
+                    <input type="text" name="email" value={credentials.email} onChange={handleChange} required />
                     <label>Password</label>
                     <input type="password" name="password" value={credentials.password} onChange={handleChange}
-                           required/>
+                        required />
                     <button type="submit">LOG IN</button>
                 </form>
             </div>

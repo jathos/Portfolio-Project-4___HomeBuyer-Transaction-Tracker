@@ -8,8 +8,9 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  /* font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace; */
+  font-family: Didot, serif;
 }
 
 /* CSS Custom Properties */
@@ -37,9 +38,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--tan-4);
+  background-color: #f1faee;
   padding: 2vmin;
   height: 100vh;
+  background-image: radial-gradient(circle, #f1faee 90%, #1d3557);
 }
 
 code {
@@ -96,9 +98,15 @@ code {
 
 .form-container {
   padding: 3vmin;
-  background-color: var(--tan-1);
-  border: .1vmin solid var(--tan-3);
-  border-radius: 1vmin;
+  padding-top: 14vh;
+  width: 100%;
+  height: 50vh;
+  /* margin: 15vh auto 15vh auto; */
+  background-color: #457b9d;
+  border: solid;
+  border-color: #1d3557;
+  border-radius: 2vmin;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.4);
 }
 
 p.error-message {
@@ -110,7 +118,15 @@ form {
   display: grid;
   grid-template-columns: 1fr 3fr;
   gap: 1.25vmin;
-  color: var(--text-light);
+  color: #1d3557;
+}
+
+.loginForm,
+.signupForm {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 1.25vmin;
+  color: #f1faee;
 }
 
 label {
@@ -122,7 +138,7 @@ label {
 input {
   padding: 1vmin;
   font-size: 2vmin;
-  border: .1vmin solid var(--tan-3);
+  border: .1vmin solid #457b9d;
   border-radius: .5vmin;
   color: var(--text-dark);
   background-image: none !important;
@@ -131,23 +147,23 @@ input {
 }
 
 input:focus {
-  border-color: var(--orange);
+  border-color: #1d3557;
 }
 
 button,
 a.button {
   margin: 1vmin;
   padding: 1vmin;
-  color: var(--white);
-  background-color: var(--orange);
+  color: #f1faee;
+  background-color: #1d3557;
   font-size: 2vmin;
-  font-weight: bold;
   text-decoration: none;
   text-align: center;
-  border: .1vmin solid var(--tan-2);
+  border: .1vmin solid #1d3557;
   border-radius: .5vmin;
   outline: none;
   cursor: pointer;
+  box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.4);
 }
 
 button.btn-sm {
@@ -163,10 +179,24 @@ button.btn-xs {
 button:disabled,
 form:invalid button[type="submit"] {
   cursor: not-allowed;
-  background-color: var(--tan-4);
+  background-color: #1d3557;
+  opacity: .4;
 }
 
 button[type="submit"] {
   grid-column: span 2;
   margin: 1vmin 0 0;
+}
+
+.loginWrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.welcome {
+  color: #1d3557;
+  font-family: Didot, serif;
 }

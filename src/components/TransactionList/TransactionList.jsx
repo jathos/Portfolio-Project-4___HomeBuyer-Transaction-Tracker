@@ -5,7 +5,6 @@ function TransactionList({ transactions, allUsers, setRerender }) {
 
     return (
         <>
-            <h1>Transaction List</h1>
             <div className="TransactionList">
                 {transactions.length > 0 ?
                     transactions.map((ele, idx) => <TransactionItem transaction={ele} allUsers={allUsers} key={transactions[idx]._id} id={idx} setRerender={setRerender} />)

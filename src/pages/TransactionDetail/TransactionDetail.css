@@ -1,7 +1,7 @@
 .viewsWrapper {
     display: flex;
     width: 100%;
-    height: 50vh;
+    height: 58vh;
 }
 
 .viewsMenu {
@@ -9,6 +9,8 @@
     flex-direction: column;
     width: 25%;
     height: 100%;
+    border: solid;
+    border-width: 1px;
 }
 
 .menuItem {
@@ -17,7 +19,7 @@
     align-items: center;
     width: 100%;
     height: 40%;
-    background-color: aquamarine;
+    background-color: #a8dadc;
     border: solid;
     border-color: black;
 }
@@ -27,6 +29,8 @@
     flex-direction: column;
     background-color: white;
     width: 75%;
+    border: solid;
+    border-width: 1px;
 }
 
 .viewHeader {
@@ -35,20 +39,22 @@
     align-items: center;
     height: 10%;
     width: 100%;
-    background-color: rgb(90, 228, 238);
+    background-color: #457b9d;
     border: solid;
     border-color: black;
     font-size: 1.7em;
+    color: #f1faee;
 }
 
 .menuHeader {
     display: flex;
     height: 10%;
-    background-color: aqua;
+    background-color: #457b9d;
     justify-content: center;
     align-items: center;
     border: solid;
     border-color: black;
+    color: #f1faee;
 }
 
 .menuItemWrapper {
@@ -77,9 +83,12 @@
 
 .tnmBar {
     display: flex;
-    width: 100%;
-    height: 10vh;
+    width: 50%;
+    height: 7vh;
     background-color: white;
+    border: solid;
+    border-width: 1px;
+    border-color: #1d3557;
     justify-content: space-around;
     align-items: center;
     margin-bottom: 15px;
@@ -103,24 +112,49 @@
 .escrowCounter {
     display: flex;
     border: solid;
-    border-color: black;
+    border-color: #1d3557;
+    border-width: 5px;
+    border-radius: 10px;
     height: 5vh;
     background-color: white;
     width: 70%;
-    margin: 0 auto;
+    margin: 10px auto;
     margin-bottom: 15px;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.4);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 10px 2px #487b7d;
+        ;
+    }
+
+    100% {
+        box-shadow: 0 0 20px 10px #a8dadc;
+    }
+}
+
+.dayPassed:nth-child(1) {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
 }
 
 .dayPassed {
-    background-color: green;
-    color: green;
+    background-color: #457b9d;
+    color: #457b9d;
     flex-grow: 1;
 }
 
 .dayLeft {
-    background-color: red;
-    color: red;
+    background-color: #e63946;
+    color: #e63946;
     flex-grow: 1;
+}
+
+.dayLeft:last-child {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
 }
 
 .escrowStatement {
@@ -181,7 +215,7 @@ textarea {
 
 .numIncomplete {
     font-weight: bold;
-    color: red;
+    color: #e63946;
 }
 
 .contactsViewWrapper {

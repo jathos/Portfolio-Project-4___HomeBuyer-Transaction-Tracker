@@ -7,30 +7,10 @@ import NewTransactionForm from '../../components/NewTransactionForm/NewTransacti
 
 function TransactionPage({ user, transactions, showForm, setShowForm, usersRef, setRerender }) {
 
-    // const [showForm, setShowForm] = useState(false)
-    // const [transactions, setTransactions] = useState([])
-    // const usersRef = useRef([]);
-
-    // useEffect(function () {
-    //     async function getTransactions() {
-    //         const allTransactions = await transactionsAPI.getAll();
-    //         setTransactions(allTransactions);
-    //     };
-    //     getTransactions();
-    // }, [showForm]);
-
-    // useEffect(function () {
-    //     async function getAllUsers() {
-    //         const allUsers = await usersAPI.getAll();
-    //         usersRef.current = allUsers
-    //     };
-    //     getAllUsers();
-    // }, []);
-
     return (
         <div>
+            <h1>Your Open Transactions</h1>
             {user.isAdmin ? <>
-                <h1>Transaction Page</h1>
                 {showForm ? <NewTransactionForm setShowForm={setShowForm} /> : <button onClick={() => setShowForm(true)}>Add New Transaction</button>}
                 <TransactionList transactions={transactions} allUsers={usersRef.current} setRerender={setRerender} />
             </>
