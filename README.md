@@ -11,7 +11,7 @@ If there's one area that technology has yet to revolutionize the Real Estate ind
 The Transaction Tracker by J.B. is a proof-of-concept visualization of an idea that's long been brewing in the head of its creator - a one-stop portal for both agents and home-buyers to keep track of deadlines, pending tasks, and other essential particulars of the month-long tornado of activity that is the escrow process.
 
 ## GETTING STARTED
----
+
 
 Click [HERE](https://transaction-tracker-by-jb.herokuapp.com/) to take the Transaction Tracker for a spin
 
@@ -22,12 +22,12 @@ pass: testadmin
 Test User -email: test456@test456.com pass: test456
 
 ## SCREENSHOTS
----
+
 <img src='./public/transactiontracker1.jpg'>
 <img src='./public/transactiontracker2.jpg'>
 
 ## TECHNOLOGIES USED
----
+
 - MongoDB / Atlas
 - Express
 - React
@@ -43,7 +43,7 @@ Test User -email: test456@test456.com pass: test456
 - [GitHub Projects Board](https://github.com/jathos/Portfolio-Project-4___HomeBuyer-Transaction-Tracker/projects/1) (for user stories and task management)
 
 ## NEXT STEPS
----
+
 - Enable PDF document upload and download
 - Implement functionality for home sellers
 - Separate admin views for different agents
