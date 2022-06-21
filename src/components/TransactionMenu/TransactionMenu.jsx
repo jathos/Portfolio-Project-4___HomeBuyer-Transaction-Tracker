@@ -21,7 +21,7 @@ function TransactionMenu({ setView, setViewFinder }) {
             <div className="menuItemWrapper">
                 <div className="menuItem" onClick={handleTasksClick}>Tasks</div>
                 <div className="menuItem" onClick={handleContactsClick}>Contacts</div>
-                <div className="menuItem" onClick={handleDictionaryClick}>Dictionary</div>
+                {/* <div className="menuItem" onClick={handleDictionaryClick}>Dictionary</div> */}
             </div>
         </div>
     );

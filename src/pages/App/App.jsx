@@ -20,7 +20,6 @@ export default function App() {
 
 
     useEffect(function () {
-        console.log("getting users....")
         async function getAllUsers() {
             const allUsers = await usersAPI.getAll();
             usersRef.current = allUsers
@@ -29,13 +28,11 @@ export default function App() {
     }, [user]);
 
     useEffect(function () {
-        console.log("getting transactions...")
         async function getTransactions() {
             if (user.isAdmin) {
                 const allTransactions = await transactionsAPI.getAll();
                 setTransactions(allTransactions);
             } else {
-                console.log("getting USER transactions for...", user.name, user._id);
                 const userTransactions = await transactionsAPI.getUserTransactions();
                 setTransactions(userTransactions);
             }
@@ -44,7 +41,6 @@ export default function App() {
     }, [showForm, rerender, user]);
 
     useEffect(function () {
-        console.log("getting contacts...")
         async function getAllContacts() {
             const allContacts = await contactAPI.getAllContacts();
             setContacts(allContacts);
