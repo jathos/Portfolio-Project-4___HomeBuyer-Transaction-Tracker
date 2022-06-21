@@ -41,7 +41,7 @@ body {
   background-color: #f1faee;
   padding: 2vmin;
   height: 100vh;
-  background-image: radial-gradient(circle, #f1faee 90%, #1d3557);
+  background-image: radial-gradient(circle, #f1faee 95%, #424f61);
 }
 
 code {
@@ -127,6 +127,7 @@ form {
   grid-template-columns: 1fr 3fr;
   gap: 1.25vmin;
   color: #f1faee;
+  justify-items: center;
 }
 
 label {
@@ -181,11 +182,14 @@ form:invalid button[type="submit"] {
   cursor: not-allowed;
   background-color: #1d3557;
   opacity: .4;
+  justify-self: center;
+  align-self: center;
 }
 
 button[type="submit"] {
   grid-column: span 2;
   margin: 1vmin 0 0;
+  justify-self: center;
 }
 
 .loginWrapper {

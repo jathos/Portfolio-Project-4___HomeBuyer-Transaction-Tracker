@@ -37,7 +37,7 @@ function TransactionItem({ transaction, allUsers, id, setRerender }) {
             <div className="TransactionItem">
                 <h1 className="address">{transaction.street}</h1>
                 <h1 className="address">{transaction.address}</h1>
-                <hr></hr>
+                <hr className="underAddress"></hr>
                 {!transaction.user ? <>
                     <form className="userSelect">
                         <select name="user" type="select" onChange={handleChange}>

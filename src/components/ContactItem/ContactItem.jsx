@@ -1,6 +1,6 @@
 function ContactItem({ contact }) {
     return (
-        <div>
+        <div className="contactDetails">
             <p>Name: {contact.name}</p>
             <p>Company: {contact.company}</p>
             <p>Phone: {contact.phone}</p>

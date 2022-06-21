@@ -9,7 +9,7 @@ function TaskHQ({ user, showView, setShowView, tasks }) {
 
     return (
         <div className="taskHQ">
-            {user.isAdmin ? <><span className="numIncomplete">{numIncomplete} pending task(s)</span><button onClick={() => setShowView(!showView)}>Add Task</button></> : <span className="numIncomplete">{numIncomplete} pending task(s)</span>}
+            {user.isAdmin ? <><span className="numIncomplete">{numIncomplete} pending task(s)</span><button onClick={() => setShowView(!showView)}>{showView ? 'Add Task' : 'Back'}</button></> : <span className="numIncomplete">{numIncomplete} pending task(s)</span>}
 
         </div>
     );

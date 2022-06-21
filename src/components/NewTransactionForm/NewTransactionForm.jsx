@@ -27,7 +27,7 @@ function NewTransactionForm({ setShowForm }) {
     return (
         <div>
             <button onClick={() => setShowForm(false)}>Back</button>
-            <form onSubmit={handleTaskSubmit}>
+            <form className="newTransactionForm" onSubmit={handleTaskSubmit}>
                 <label>Street</label>
                 <input name="street" onChange={handleChange} />
                 <label>City</label>

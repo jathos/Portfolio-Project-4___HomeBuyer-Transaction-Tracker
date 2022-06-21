@@ -40,7 +40,9 @@ function NewContactForm({ user, rerender, setRerender }) {
         <>
             {user.isAdmin ?
                 <div className="contactForm">
-                    <h5>Create New Contact</h5>
+                    <div className="contactFormHeader">
+                        <h5>Create New Contact</h5>
+                    </div>
                     <form onSubmit={handleSubmit}>
                         <label>Role</label>
                         <select name="role" onChange={handleChange} value={contactForm.role}>
