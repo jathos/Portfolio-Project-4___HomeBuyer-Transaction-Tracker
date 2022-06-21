@@ -9,9 +9,10 @@ function TransactionPage({ user, transactions, showForm, setShowForm, usersRef, 
 
     return (
         <div>
-            <h1>Your Open Transactions</h1>
+            <h1>Your Active Escrows</h1>
+            <hr></hr>
             {user.isAdmin ? <>
-                {showForm ? <NewTransactionForm setShowForm={setShowForm} /> : <button onClick={() => setShowForm(true)}>Add New Transaction</button>}
+                {showForm ? <NewTransactionForm setShowForm={setShowForm} /> : <button className="addNewTransactionButton" onClick={() => setShowForm(true)}>Add New Transaction</button>}
                 <TransactionList transactions={transactions} allUsers={usersRef.current} setRerender={setRerender} />
             </>
                 :

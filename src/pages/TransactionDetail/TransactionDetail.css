@@ -25,6 +25,13 @@
     color: #f1faee;
     font-family: serif;
     font-size: 2em;
+    transition: border-color .5s;
+    transition: border-width .5s;
+}
+
+.menuItem:hover {
+    border-color: white;
+    border-width: 6px;
 }
 
 .selectionView {
@@ -186,6 +193,13 @@
     border-color: black;
     padding: 7px;
     gap: 2px;
+    transition: border-color 1s;
+    transition: border-width 1s;
+}
+
+.taskItem:hover {
+    border-color: #b1d4ea;
+    border-width: 6px;
 }
 
 .taskHeader {
@@ -318,4 +332,8 @@ textarea {
 
 .newTransactionForm {
     margin-bottom: 40px;
+}
+
+.addNewTransactionButton {
+    margin-bottom: 20px;
 }
