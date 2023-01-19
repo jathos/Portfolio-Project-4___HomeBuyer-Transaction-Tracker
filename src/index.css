@@ -41,7 +41,7 @@ body {
   background-color: #f1faee;
   padding: 2vmin;
   height: 100vh;
-  background-image: radial-gradient(circle, #f1faee 95%, #424f61);
+  /* background-image: radial-gradient(circle, #f1faee 95%, #424f61); */
 }
 
 code {
