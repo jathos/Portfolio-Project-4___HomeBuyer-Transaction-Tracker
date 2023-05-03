@@ -1,3 +1,9 @@
+html {
+  position: relative;
+  height: 100%;
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,6 +11,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* background-color: #f1faee; */
+  height: 100%;
+  position: relative;
 }
 
 code {
@@ -23,25 +32,13 @@ code {
   --orange: #F67F00;
   --text-light: #968c84;
   --text-dark: #615954;
+  --poop: rgba(104, 14, 14, 0.671);
 }
 
 *,
 *:before,
 *:after {
   box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #f1faee;
-  padding: 2vmin;
-  height: 100vh;
-  /* background-image: radial-gradient(circle, #f1faee 95%, #424f61); */
 }
 
 code {
@@ -96,18 +93,7 @@ code {
   font-size: 2vmin;
 }
 
-.form-container {
-  padding: 3vmin;
-  padding-top: 14vh;
-  width: 100%;
-  height: 50vh;
-  /* margin: 15vh auto 15vh auto; */
-  background-color: #457b9d;
-  border: solid;
-  border-color: #1d3557;
-  border-radius: 2vmin;
-  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.4);
-}
+
 
 p.error-message {
   color: var(--orange);
@@ -118,15 +104,14 @@ form {
   display: grid;
   grid-template-columns: 1fr 3fr;
   gap: 1.25vmin;
-  color: #1d3557;
 }
 
-.loginForm,
+/* .loginForm, */
 .signupForm {
   display: grid;
   grid-template-columns: 1fr 3fr;
   gap: 1.25vmin;
-  color: #f1faee;
+  color: #1d3557;
   justify-items: center;
 }
 
@@ -137,10 +122,9 @@ label {
 }
 
 input {
-  padding: 1vmin;
+  /* padding: 1vmin; */
   font-size: 2vmin;
-  border: .1vmin solid #457b9d;
-  border-radius: .5vmin;
+  border: .1vmin solid #b3c7f6af;
   color: var(--text-dark);
   background-image: none !important;
   /* prevent lastpass */
@@ -148,23 +132,23 @@ input {
 }
 
 input:focus {
-  border-color: #1d3557;
+  border-color: #13097C;
 }
 
 button,
 a.button {
-  margin: 1vmin;
+  margin: 0 0 1vmin 0;
   padding: 1vmin;
   color: #f1faee;
-  background-color: #1d3557;
+  background-color: #FE7062;
   font-size: 2vmin;
   text-decoration: none;
   text-align: center;
-  border: .1vmin solid #1d3557;
   border-radius: .5vmin;
   outline: none;
   cursor: pointer;
   box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.4);
+  border: none;
 }
 
 button.btn-sm {
@@ -180,7 +164,7 @@ button.btn-xs {
 button:disabled,
 form:invalid button[type="submit"] {
   cursor: not-allowed;
-  background-color: #1d3557;
+  background-color: #FE7062;
   opacity: .4;
   justify-self: center;
   align-self: center;
@@ -188,19 +172,6 @@ form:invalid button[type="submit"] {
 
 button[type="submit"] {
   grid-column: span 2;
-  margin: 1vmin 0 0;
+  margin: 0;
   justify-self: center;
-}
-
-.loginWrapper {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.welcome {
-  color: #1d3557;
-  font-family: Didot, serif;
 }

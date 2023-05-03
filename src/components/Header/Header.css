@@ -1,0 +1,21 @@
+.header {
+    display: flex;
+    width: 100%;
+    max-height: 8%;
+    background-color: #13097C;
+}
+
+.appName {
+    font-family: 'Bebas Neue', cursive;
+    color: white;
+    font-size: 30pt;
+    padding: 0;
+    margin: 7px 0px 0px 7px;
+}
+
+.material-symbols-outlined {
+    font-size: 32pt;
+    color: white;
+    margin-left: 10px;
+    margin-top: 7px;
+}

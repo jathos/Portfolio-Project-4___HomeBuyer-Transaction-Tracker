@@ -1,0 +1,46 @@
+.loginWrapper {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    margin: 0 3vmin 0 0;
+    background-color: white;
+    border-radius: 0 0 0 89%;
+    width: 120%;
+}
+
+.welcome {
+    color: #13097C;
+    font-family: 'Oswald', sans-serif;
+    margin-left: 4vmin;
+    line-height: 1.2;
+}
+
+.login-picture {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    width: 50%;
+    height: 90vmin;
+    background-image: url('../../public/family_newhome_bigkey.jpg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10% 89%;
+}
+
+.auth-main {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #E9EFFD;
+}
+
+.login-text-and-buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-button {
+    background-color: #FE7062;
+    margin-left: 4vmin;
+}
