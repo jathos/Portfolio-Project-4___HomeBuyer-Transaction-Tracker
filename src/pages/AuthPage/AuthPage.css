@@ -13,6 +13,7 @@
     font-family: 'Oswald', sans-serif;
     margin-left: 4vmin;
     line-height: 1.2;
+    text-align: right;
 }
 
 .login-picture {
@@ -38,6 +39,7 @@
 .login-text-and-buttons {
     display: flex;
     flex-direction: column;
+    gap: 25px;
 }
 
 .login-button {
