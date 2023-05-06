@@ -9,6 +9,4 @@
 .loginForm {
     margin: 5px;
     display: flex;
-    min-width: 39vmax;
-    justify-content: center;
 }

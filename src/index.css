@@ -93,8 +93,6 @@ code {
   font-size: 2vmin;
 }
 
-
-
 p.error-message {
   color: var(--orange);
   text-align: center;
@@ -102,19 +100,19 @@ p.error-message {
 
 form {
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  /* grid-template-columns: 1fr 3fr; */
   gap: 1.25vmin;
 }
 
 label {
-  font-size: 2vmin;
+  /* font-size: 2vmin; */
   display: flex;
   align-items: center;
 }
 
 input {
   /* padding: 1vmin; */
-  font-size: 2vmin;
+  /* font-size: 2vmin; */
   border: .1vmin solid #b3c7f6af;
   color: var(--text-dark);
   background-image: none !important;
@@ -132,7 +130,7 @@ a.button {
   padding: 1vmin;
   color: #f1faee;
   background-color: #FE7062;
-  font-size: 2vmin;
+  /* font-size: 2vmin; */
   text-decoration: none;
   text-align: center;
   border-radius: .5vmin;
