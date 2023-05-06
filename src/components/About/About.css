@@ -1,0 +1,21 @@
+.about-wrapper {
+    flex-grow: 1;
+    padding: 6vmax;
+    display: flex;
+    justify-content: space-around;
+    background-color: white;
+}
+
+.about-title {
+    font-size: 2.5vw;
+    color: #13097C;
+    font-family: 'Oswald', sans-serif;
+    text-decoration: underline;
+    margin: 3vmax;
+}
+
+.about-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

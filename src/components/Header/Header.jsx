@@ -1,12 +1,13 @@
+import { Link } from 'react-router-dom';
 import './Header.css';
 
 function Header() {
     return (
         <header className="header">
-            <span class="material-symbols-outlined">
+            <Link to={'/'}><span class="material-symbols-outlined">
                 home_app_logo
             </span>
-            <p className="appName">Transaction Tracker</p>
+                <p className="appName">Transaction Tracker</p></Link>
         </header>
     );
 };

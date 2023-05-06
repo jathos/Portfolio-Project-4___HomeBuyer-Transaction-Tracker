@@ -7,6 +7,7 @@ import TransactionDetail from "../TransactionDetail/TransactionDetail";
 import NavBar from "../../components/NavBar/NavBar";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
+import About from "../../components/About/About";
 import * as transactionsAPI from '../../utilities/transaction-api';
 import * as usersAPI from '../../utilities/users-api';
 import * as contactAPI from '../../utilities/contact-api';
@@ -62,7 +63,15 @@ export default function App() {
                     <TransactionDetail transaction={transactions} user={user} rerender={rerender} setRerender={setRerender} contacts={contacts} />
                 </Route>
                 <Redirect to="/transactions" />
-            </> : <AuthPage setUser={setUser} rerender={rerender} setRerender={setRerender} />}
+            </> :
+                <>
+                    <Route exact path="/">
+                        <AuthPage setUser={setUser} rerender={rerender} setRerender={setRerender} />
+                    </Route>
+                    <Route exact path="/about">
+                        <About></About>
+                    </Route>
+                </>}
             <Footer></Footer>
         </div>
     </main>);

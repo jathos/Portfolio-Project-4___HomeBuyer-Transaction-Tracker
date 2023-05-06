@@ -7,12 +7,17 @@
     justify-content: flex-end;
 }
 
+.header>a {
+    text-decoration: none;
+    display: flex;
+}
+
 .appName {
     font-family: 'Bebas Neue', cursive;
     color: white;
     font-size: 30pt;
     padding: 0;
-    margin: 7px 10px 0px 7px;
+    margin: 7px 2vmax 0px 7px;
 }
 
 .material-symbols-outlined {
