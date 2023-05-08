@@ -6,7 +6,7 @@ function Footer() {
         <div className="footer">
             <div className="footerLinksWrapper">
                 <Link to="/about"><a>About</a></Link>
-                <a>Contact</a>
+                <Link to="/contact"><a>Contact</a></Link>
             </div>
         </div>
     );

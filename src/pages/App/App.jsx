@@ -8,6 +8,7 @@ import NavBar from "../../components/NavBar/NavBar";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import About from "../../components/About/About";
+import Contact from "../../components/Contact/Contact";
 import * as transactionsAPI from '../../utilities/transaction-api';
 import * as usersAPI from '../../utilities/users-api';
 import * as contactAPI from '../../utilities/contact-api';
@@ -70,6 +71,9 @@ export default function App() {
                     </Route>
                     <Route exact path="/about">
                         <About></About>
+                    </Route>
+                    <Route exact path="/contact">
+                        <Contact></Contact>
                     </Route>
                 </>}
             <Footer></Footer>

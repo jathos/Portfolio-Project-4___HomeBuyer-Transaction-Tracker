@@ -1,4 +1,4 @@
-.about-wrapper {
+.contact-wrapper {
     flex-grow: 1;
     padding: 6vmax;
     display: flex;
@@ -6,7 +6,7 @@
     background-color: white;
 }
 
-.about-title {
+.contact-title {
     font-size: 2.5vw;
     color: #13097C;
     font-family: 'Oswald', sans-serif;
@@ -14,15 +14,8 @@
     margin: 3vmax;
 }
 
-.about-main {
+.contact-main {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.content-wrapper {
-    margin-bottom: 2%;
-    width: 100%;
-    padding: 0 1vmax 0 1vmax;
-    font-size: 1vw;
 }
