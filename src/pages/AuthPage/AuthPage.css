@@ -1,11 +1,13 @@
 .loginWrapper {
     display: flex;
     align-items: center;
+    justify-content: space-evenly;
     flex-grow: 1;
     margin: 0 3vmin 0 0;
     background-color: white;
     border-radius: 0 0 0 89%;
-    width: 120%;
+    /* width: 120%; */
+    width: 100%;
     height: 85%;
 }
 
@@ -23,11 +25,32 @@
     align-items: flex-end;
     width: 50%;
     height: 90vmin;
-    background-image: url('../../public/family_newhome_bigkey.jpg');
-    background-size: contain;
+    /* background-image: url('../../public/family_newhome_bigkey.jpg'); */
+    /* background-size: contain;
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
     border-radius: 10% 89%;
+}
+
+.login-picture>img {
+    height: 100%;
+    width: 100%;
+    border-radius: 10% 89%;
+    position: relative;
+    animation: slide 1.5s ease-out;
+    opacity: .85;
+}
+
+@keyframes slide {
+    from {
+        left: -150%;
+        opacity: 0;
+    }
+
+    to {
+        left: 0;
+        opacity: .85;
+    }
 }
 
 .auth-main {
@@ -41,14 +64,49 @@
     display: flex;
     flex-direction: column;
     gap: 25px;
-    margin-left: 10px;
+    animation: fade 2s ease-out;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    75% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 .login-button {
     background-color: #FE7062;
     margin-left: 4vmin;
+
 }
 
 .login-button:hover {
     background-color: #E24941;
+    position: relative;
+    animation: jump .2s ease-in;
+}
+
+@keyframes jump {
+    0% {
+        bottom: 0;
+    }
+
+    40% {
+        bottom: 0;
+    }
+
+    60% {
+        top: -3px;
+    }
+
+    100% {
+        bottom: 0;
+    }
 }

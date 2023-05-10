@@ -1,4 +1,5 @@
 import './AuthPage.css';
+import image from '../../public/family_newhome_bigkey.jpg';
 import SignUpForm from '../../components/SignUpForm/SignUpForm';
 import LoginForm from '../../components/LoginForm/LoginForm';
 import { useState } from "react";
@@ -21,7 +22,7 @@ export default function AuthPage({ setUser, rerender, setRerender }) {
                     {showLogin ? <LoginForm setUser={setUser} rerender={rerender} setRerender={setRerender} /> : <SignUpForm setUser={setUser} rerender={rerender} />}
                 </div>
                 <div className="login-picture">
-
+                    <img src={image}></img>
                 </div>
             </div>
         </>
