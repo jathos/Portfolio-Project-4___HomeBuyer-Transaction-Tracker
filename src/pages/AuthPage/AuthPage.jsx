@@ -1,5 +1,5 @@
 import './AuthPage.css';
-import image from '../../public/family_newhome_bigkey.jpg';
+import image from '../../public/family_newhome_bigkey2.jpg';
 import SignUpForm from '../../components/SignUpForm/SignUpForm';
 import LoginForm from '../../components/LoginForm/LoginForm';
 import { useState } from "react";
@@ -7,11 +7,6 @@ import { useState } from "react";
 export default function AuthPage({ setUser, rerender, setRerender }) {
 
     const [showLogin, setShowLogin] = useState(true);
-
-    const style = {
-        height: 200,
-        width: 200,
-    };
 
     return (
         <>
@@ -24,7 +19,7 @@ export default function AuthPage({ setUser, rerender, setRerender }) {
                 <div className="login-picture">
                     <img src={image}></img>
                 </div>
-            </div>
+            </div >
         </>
     );
 }

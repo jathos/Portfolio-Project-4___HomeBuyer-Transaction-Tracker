@@ -4,7 +4,6 @@ import { getUser } from '../../utilities/users-service';
 import AuthPage from "../AuthPage/AuthPage";
 import TransactionPage from "../TransactionPage/TransactionPage";
 import TransactionDetail from "../TransactionDetail/TransactionDetail";
-import NavBar from "../../components/NavBar/NavBar";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import About from "../../components/About/About";
@@ -54,9 +53,8 @@ export default function App() {
 
     return (<main className="App">
         <div className="auth-main">
-            <Header></Header>
+            <Header user={user} setUser={setUser}></Header>
             {user ? <>
-                <NavBar user={user} setUser={setUser} />
                 <Route exact path="/transactions">
                     <TransactionPage transactions={transactions} user={user} setRerender={setRerender} showForm={showForm} setShowForm={setShowForm} usersRef={usersRef} />
                 </Route>

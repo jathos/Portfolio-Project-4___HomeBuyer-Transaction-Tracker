@@ -4,7 +4,7 @@
     max-height: 8%;
     background-color: #13097C;
     z-index: 1;
-    justify-content: flex-end;
+    justify-content: space-between;
 }
 
 .header>a {
@@ -25,4 +25,23 @@
     color: white;
     margin-left: 10px;
     margin-top: 7px;
+}
+
+.nav-links {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-self: flex-start;
+    gap: 1vmax;
+    font-family: 'Bebas Neue', cursive;
+    margin-left: 2vmax;
+    font-size: 1.4rem;
+}
+
+.nav-links>a {
+    color: white;
+}
+
+.nav-links>p {
+    color: #FE7062;
 }

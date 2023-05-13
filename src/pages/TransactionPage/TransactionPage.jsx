@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import TransactionList from '../../components/TransactionList/TransactionList';
 import NewTransactionForm from '../../components/NewTransactionForm/NewTransactionForm';
+import './TransactionPage.css';
 // import TransactionDetail from '../TransactionDetail/TransactionDetail';
 // import * as transactionsAPI from '../../utilities/transaction-api'
 // import * as usersAPI from '../../utilities/users-api'
@@ -8,7 +9,7 @@ import NewTransactionForm from '../../components/NewTransactionForm/NewTransacti
 function TransactionPage({ user, transactions, showForm, setShowForm, usersRef, setRerender }) {
 
     return (
-        <div>
+        <div className="transactions-main">
             <h1>Your Active Escrows</h1>
             <hr></hr>
             {user.isAdmin ? <>
