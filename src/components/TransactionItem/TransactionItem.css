@@ -1,25 +1,28 @@
 .TransactionItem {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    min-width: 30%;
-    max-width: 49%;
-    border: solid;
-    border-width: 3px;
-    background-color: #a8dadc;
+    justify-content: space-between;
+    width: 65%;
+    border: solid 1px #13097C;
     margin: 2px;
-    height: 30vh;
-    border-radius: 30px;
-    border-style: outset;
-    border-color: #1d3557;
-    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.4);
-    color: #1d3557;
-    transition: box-shadow 1s;
+    height: 5vmax;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+    color: #13097C;
+    transition: box-shadow .15s;
+    position: relative;
+    overflow: hidden;
 }
 
 .TransactionItem:hover {
-    box-shadow: 0 0 40px 10px #457b9d;
+    bottom: 4px;
+    right: 4px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
+    height: 5.1vmax;
+    width: 65.5%;
+}
+
+.TransactionItem>a {
+    margin-right: 2rem;
 }
 
 .userSelect {
@@ -29,4 +32,23 @@
 
 .address {
     margin: 0;
+    font-size: 1.2vmax;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    color: white;
+    z-index: 1;
+    padding: 1rem;
+}
+
+.test {
+    background-color: #E9EFFD;
+    background-color: #13097C;
+    height: 300%;
+    width: 100%;
+    position: absolute;
+    right: 65%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
