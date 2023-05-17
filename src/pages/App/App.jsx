@@ -74,7 +74,7 @@ export default function App() {
                         <Contact></Contact>
                     </Route>
                 </>}
-            <Footer></Footer>
+            {/* <Footer></Footer> */}
         </div>
     </main>);
 }

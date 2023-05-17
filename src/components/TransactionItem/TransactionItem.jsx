@@ -54,39 +54,41 @@ function TransactionItem({ transaction, allUsers, id, setRerender }) {
 
     return (
         <>
-            <div className="TransactionItem">
-                <div className="test">
-                </div>
-                <div className="address">
-                    <p>{transaction.street}</p>
-                    <p>{transaction.address}</p>
-                </div>
-                <div className="transaction-item-details-wrapper">
-                    <div className="transaction-item-seller-buyer">Seller: {transaction.sellerFirst}&nbsp;{transaction.sellerLast} | Buyer: {transaction.buyerFirst}&nbsp;{transaction.buyerLast}</div>
-                    <div className="transaction-item-tasks-messages"><span className="transaction-item-task-count">{taskCount}</span> Incomplete Tasks <span className="transaction-item-message-count">{messageCount}</span> New Messages</div>
-                </div>
-                <div className="transaction-item-days-left-wrapper">
-                    <div className="transaction-item-days-left-number">{daysToClose}</div>
-                    <div>days to closing</div>
-                </div>
-                {!transaction.user ? <>
-                    <form className="userSelect">
-                        <select name="user" type="select" onChange={handleChange}>
-                            <option value="">Select a User</option>
-                            {allUsers.map(ele => <option value={ele._id}>{ele.name}</option>)}
-                        </select>
-                        <button type="submit" onClick={assignUser}>Assign User</button>
-                    </form>
-                    <p>{userSelect.error}</p>
-                    <Link to={`/transactions/${id}`}><button>View Details</button></Link>
-                </>
-                    :
+            <Link to={`/transactions/${id}`} className="transaction-item-main">
+                <div className="TransactionItem">
+                    <div className="test">
+                    </div>
+                    <div className="address">
+                        <p>{transaction.street}</p>
+                        <p>{transaction.address}</p>
+                    </div>
+                    <div className="transaction-item-details-wrapper">
+                        <div className="transaction-item-seller-buyer"><span style={{ fontWeight: 'bold' }}>Seller:</span> {transaction.sellerFirst}&nbsp;{transaction.sellerLast} &nbsp;<span style={{ fontWeight: 'bold' }}>Buyer:</span> {transaction.buyerFirst}&nbsp;{transaction.buyerLast}</div>
+                        <div className="transaction-item-tasks-messages"><span className="transaction-item-task-count">{taskCount}</span> Incomplete Tasks <span className="transaction-item-message-count">{messageCount}</span> New Messages</div>
+                    </div>
+                    <div className="transaction-item-days-left-wrapper">
+                        <div className="transaction-item-days-left-number">{daysToClose}</div>
+                        <div>days to closing</div>
+                    </div>
+                    {!transaction.user ? <>
+                        <form className="userSelect">
+                            <select name="user" type="select" onChange={handleChange}>
+                                <option value="">Select a User</option>
+                                {allUsers.map(ele => <option value={ele._id}>{ele.name}</option>)}
+                            </select>
+                            <button type="submit" onClick={assignUser}>Assign User</button>
+                        </form>
+                        <p>{userSelect.error}</p>
+                        <Link to={`/transactions/${id}`}><button>View Details</button></Link>
+                    </>
+                        :
+                        null
+                        // <Link to={`/transactions/${id}`}><button>View Details</button></Link>
+                    }
 
-                    <Link to={`/transactions/${id}`}><button>View Details</button></Link>
-                }
 
-
-            </div>
+                </div>
+            </Link>
         </>
     );
 };

@@ -3,6 +3,7 @@
     align-items: center;
     justify-content: space-between;
     width: 65%;
+    width: 100%;
     border: solid 4px #13097C;
     margin: 2px;
     height: 5vmax;
@@ -18,7 +19,7 @@
     right: 4px;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
     height: 5.1vmax;
-    width: 65.5%;
+    width: 100.5%;
 }
 
 .TransactionItem>a {
@@ -65,6 +66,7 @@
     align-items: center;
     justify-content: center;
     gap: 1vmin;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .transaction-item-days-left-wrapper {
@@ -73,11 +75,12 @@
     justify-content: center;
     background-color: #E9EFFD;
     height: 100%;
-    margin-right: 3.5vmin;
+    /* margin-right: 3.5vmin; */
     align-items: center;
     flex-direction: column;
-    border-right: 4px solid #13097C;
-    border-left: 4px solid #13097C;
+    /* border-right: 2px solid #13097C;
+    border-left: 2px solid #13097C; */
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .transaction-item-days-left-number {
@@ -94,4 +97,10 @@
     padding: 5px;
     font-weight: bold;
     color: white;
+}
+
+.transaction-item-main {
+    display: flex;
+    text-decoration: none;
+    width: 65%;
 }

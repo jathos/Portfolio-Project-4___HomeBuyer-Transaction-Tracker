@@ -2,6 +2,7 @@ import './AuthPage.css';
 import image from '../../public/family_newhome_bigkey2.jpg';
 import SignUpForm from '../../components/SignUpForm/SignUpForm';
 import LoginForm from '../../components/LoginForm/LoginForm';
+import Footer from '../../components/Footer/Footer';
 import { useState } from "react";
 
 export default function AuthPage({ setUser, rerender, setRerender }) {
@@ -20,6 +21,7 @@ export default function AuthPage({ setUser, rerender, setRerender }) {
                     <img src={image}></img>
                 </div>
             </div >
+            <Footer></Footer>
         </>
     );
 }
