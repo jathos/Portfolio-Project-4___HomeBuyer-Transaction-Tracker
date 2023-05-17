@@ -1,9 +1,10 @@
 .contact-wrapper {
     flex-grow: 1;
-    padding: 6vmax;
+    padding: 4vmax;
     display: flex;
     justify-content: space-around;
     background-color: white;
+    height: 85%;
 }
 
 .contact-title {
