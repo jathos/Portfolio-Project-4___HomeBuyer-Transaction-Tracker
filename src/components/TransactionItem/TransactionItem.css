@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: space-between;
     width: 65%;
-    border: solid 1px #13097C;
+    border: solid 4px #13097C;
     margin: 2px;
     height: 5vmax;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
@@ -22,7 +22,11 @@
 }
 
 .TransactionItem>a {
-    margin-right: 2rem;
+    margin-right: 3.5vmin;
+}
+
+.TransactionItem>a>button:hover {
+    background-color: #E24941;
 }
 
 .userSelect {
@@ -38,10 +42,10 @@
     color: white;
     z-index: 1;
     padding: 1rem;
+    flex-grow: 1;
 }
 
 .test {
-    background-color: #E9EFFD;
     background-color: #13097C;
     height: 300%;
     width: 100%;
@@ -51,4 +55,43 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+}
+
+.transaction-item-details-wrapper {
+    flex-grow: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1vmin;
+}
+
+.transaction-item-days-left-wrapper {
+    display: flex;
+    padding: 1vmin;
+    justify-content: center;
+    background-color: #E9EFFD;
+    height: 100%;
+    margin-right: 3.5vmin;
+    align-items: center;
+    flex-direction: column;
+    border-right: 4px solid #13097C;
+    border-left: 4px solid #13097C;
+}
+
+.transaction-item-days-left-number {
+    color: #E24941;
+    font-size: 20pt;
+    font-weight: bold;
+}
+
+.transaction-item-task-count,
+.transaction-item-message-count {
+    background-color: green;
+    background-color: #FE7062;
+    border-radius: 40%;
+    padding: 5px;
+    font-weight: bold;
+    color: white;
 }

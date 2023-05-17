@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import EscrowDayLeft from '../EscrowDayLeft/EscrowDayLeft';
 import EscrowDayPassed from '../EscrowDayPassed/EscrowDayPassed';
+import './EscrowCounter.css';
 
 function EscrowCounter({ end, start }) {
 
@@ -14,7 +15,7 @@ function EscrowCounter({ end, start }) {
 
     return (
         <>
-            <h1 className="escrowStatement">Your Escrow Closes In {daysLeftRef.current} Days</h1>
+            {/* <h1 className="escrowStatement">Your Escrow Closes In {daysLeftRef.current} Days</h1> */}
             <div className="escrowCounter">
                 {daysPassedDivRef.map((ele, idx) => <EscrowDayPassed ele={ele} key={`A${idx}`} />)}
                 {daysLeftDivRef.map((ele, idx) => <EscrowDayLeft ele={ele} key={`B${idx}`} />)}

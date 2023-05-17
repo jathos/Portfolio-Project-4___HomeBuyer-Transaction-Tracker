@@ -20,7 +20,7 @@ function About() {
                 <div className="content-wrapper">
                     <p className="about-content"><span class="material-symbols-outlined" style={{ color: '#13097C', position: 'relative', bottom: '7px', right: '3px' }}>
                         home_app_logo
-                    </span>Transaction Tracker gives a much needed sense of control over the escrow process to today's homebuyers, while not interfering with the much needed expertise and guidance of a licensed real estate professional.</p>
+                    </span>Transaction Tracker returns a sense of control over the escrow process to today's homebuyers, while not interfering with the much needed expertise and guidance of a licensed real estate professional.</p>
                 </div>
                 <div className="content-wrapper">
                     <p className="about-content"><span class="material-symbols-outlined" style={{ color: '#13097C', position: 'relative', bottom: '7px', right: '3px' }}>

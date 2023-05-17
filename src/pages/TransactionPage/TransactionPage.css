@@ -1,5 +1,6 @@
 .transactions-main {
     height: 85%;
+    flex-grow: 1;
     background-color: white;
     padding: 2vmin;
 }

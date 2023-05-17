@@ -1,9 +1,29 @@
 import { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import * as transactionsAPI from '../../utilities/transaction-api';
+import EscrowCounter from '../EscrowCounter/EscrowCounter';
+import TaskHQ from '../TaskHQ/TaskHQ';
 import './TransactionItem.css';
 
 function TransactionItem({ transaction, allUsers, id, setRerender }) {
+
+    let taskCount = 0;
+    for (let i = 0; i < transaction.tasks.length; i++) {
+        if (transaction.tasks[i].isCompleted == false) {
+            taskCount++
+        };
+    };
+
+    let messageCount = 0;
+    transaction.tasks.forEach(task => {
+        task.messages.forEach(message => {
+            if (message.unread == true) {
+                messageCount++
+            };
+        });
+    });
+
+    const daysToClose = Math.round((new Date(transaction.closeDate) - new Date()) / 86400000);
 
     const [userSelect, setUserSelect] = useState({
         user: "",
@@ -41,6 +61,14 @@ function TransactionItem({ transaction, allUsers, id, setRerender }) {
                     <p>{transaction.street}</p>
                     <p>{transaction.address}</p>
                 </div>
+                <div className="transaction-item-details-wrapper">
+                    <div className="transaction-item-seller-buyer">Seller: {transaction.sellerFirst}&nbsp;{transaction.sellerLast} | Buyer: {transaction.buyerFirst}&nbsp;{transaction.buyerLast}</div>
+                    <div className="transaction-item-tasks-messages"><span className="transaction-item-task-count">{taskCount}</span> Incomplete Tasks <span className="transaction-item-message-count">{messageCount}</span> New Messages</div>
+                </div>
+                <div className="transaction-item-days-left-wrapper">
+                    <div className="transaction-item-days-left-number">{daysToClose}</div>
+                    <div>days to closing</div>
+                </div>
                 {!transaction.user ? <>
                     <form className="userSelect">
                         <select name="user" type="select" onChange={handleChange}>
@@ -53,6 +81,7 @@ function TransactionItem({ transaction, allUsers, id, setRerender }) {
                     <Link to={`/transactions/${id}`}><button>View Details</button></Link>
                 </>
                     :
+
                     <Link to={`/transactions/${id}`}><button>View Details</button></Link>
                 }
 

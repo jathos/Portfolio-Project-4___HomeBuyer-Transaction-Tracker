@@ -18,6 +18,7 @@
     font-size: 30pt;
     padding: 0;
     margin: 7px 2vmax 0px 7px;
+    color: #E9EFFD;
 }
 
 .material-symbols-outlined {
@@ -25,6 +26,7 @@
     color: white;
     margin-left: 10px;
     margin-top: 7px;
+    color: #E9EFFD;
 }
 
 .nav-links {
@@ -43,5 +45,5 @@
 }
 
 .nav-links>p {
-    color: #FE7062;
+    color: #E9EFFD;
 }

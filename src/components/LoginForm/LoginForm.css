@@ -15,3 +15,7 @@ p.error-message {
     color: red;
     margin-left: 4vmin;
 }
+
+.login-submit:hover {
+    background-color: #E24941;
+}
