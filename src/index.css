@@ -97,12 +97,14 @@ form {
   display: grid;
   /* grid-template-columns: 1fr 3fr; */
   gap: 1.25vmin;
+  padding: .5vmin;
 }
 
 label {
   /* font-size: 2vmin; */
   display: flex;
   align-items: center;
+  font-size: .9rem;
 }
 
 input {
@@ -113,6 +115,7 @@ input {
   background-image: none !important;
   /* prevent lastpass */
   outline: none;
+  background-color: #fdfcfc;
 }
 
 input:focus {
@@ -131,8 +134,9 @@ a.button {
   border-radius: .5vmin;
   outline: none;
   cursor: pointer;
-  box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.4);
+  /* box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4); */
   border: none;
+  font-family: 'Oswald', sans-serif;
 }
 
 button.btn-sm {

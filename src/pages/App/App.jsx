@@ -19,6 +19,7 @@ export default function App() {
     const [transactions, setTransactions] = useState([]);
     const [rerender, setRerender] = useState(false);
     const [contacts, setContacts] = useState([]);
+    const [showHomeLink, setShowHomeLink] = useState(false);
     const usersRef = useRef([]);
 
 
@@ -53,7 +54,7 @@ export default function App() {
 
     return (<main className="App">
         <div className="auth-main">
-            <Header user={user} setUser={setUser}></Header>
+            {/* <Header user={user} setUser={setUser}></Header> */}
             {user ? <>
                 <Route exact path="/transactions">
                     <TransactionPage transactions={transactions} user={user} setRerender={setRerender} showForm={showForm} setShowForm={setShowForm} usersRef={usersRef} />
@@ -68,10 +69,10 @@ export default function App() {
                         <AuthPage setUser={setUser} rerender={rerender} setRerender={setRerender} />
                     </Route>
                     <Route exact path="/about">
-                        <About></About>
+                        <About setShowHomeLink={setShowHomeLink} showHomeLink={showHomeLink}></About>
                     </Route>
                     <Route exact path="/contact">
-                        <Contact></Contact>
+                        <Contact setShowHomeLink={setShowHomeLink} showHomeLink={showHomeLink}></Contact>
                     </Route>
                 </>}
             {/* <Footer></Footer> */}

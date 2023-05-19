@@ -15,9 +15,16 @@
 .footerLinksWrapper>a {
     color: white;
     font-family: 'Bebas Neue', cursive;
-    font-size: 1.3rem;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1rem;
 }
 
-.footerLinksWrapper>a:first-child {
+.footerLinksWrapper>a {
     margin-right: 20px;
+}
+
+.bug {
+    background-color: red;
+    color: white;
+    height: 50%;
 }

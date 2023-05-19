@@ -10,34 +10,81 @@
     height: 85%;
 }
 
-.welcome {
+/* .welcome {
     color: #13097C;
     font-family: 'Oswald', sans-serif;
     margin-left: 4vmin;
     line-height: 1.2;
     text-align: right;
+} */
+
+.login-text-and-buttons {
+    display: flex;
+    flex-direction: column;
+    animation: fade 2s ease-out;
+    font-family: 'Oswald', sans-serif;
+    max-width: 35%;
+    /* min-height: 65%;
+    justify-content: space-evenly; */
+}
+
+.login-title {
+    margin-left: 4vmin;
+    margin-bottom: 4vmin;
+    color: #13097C;
+    font-size: 8rem;
+    font-weight: 900;
+    letter-spacing: -1px;
+    line-height: 115px;
+}
+
+.login-blurb {
+    margin-left: 4vmin;
+    margin-bottom: 4vmin;
+    color: #13097c;
+    font-size: 1.4rem;
+    max-width: 89%;
+    letter-spacing: 1.3px;
+    line-height: 2.4rem;
+    opacity: .65;
 }
 
 .login-picture {
     display: flex;
     justify-content: space-evenly;
     align-items: flex-end;
-    width: 50%;
-    height: 90vmin;
+    width: 47%;
+    height: 88vmin;
+    height: 90%;
+    width: 45%;
     /* background-image: url('../../public/family_newhome_bigkey.jpg'); */
     /* background-size: contain;
     background-position: center;
     background-repeat: no-repeat; */
     border-radius: 10% 89%;
+    opacity: .85;
+    position: relative;
+    animation: slide 1.5s ease-out;
 }
 
 .login-picture>img {
     height: 100%;
-    width: 100%;
+    width: 95%;
     border-radius: 10% 89%;
     position: relative;
-    animation: slide 1.5s ease-out;
+    /* animation: slide 1.5s ease-out; */
     opacity: .85;
+}
+
+.login-picture::before {
+    content: "";
+    background-color: #7476E9;
+    height: 90%;
+    width: 90%;
+    border-radius: 50%;
+    position: absolute;
+    top: 1vmin;
+    right: 6vmin;
 }
 
 @keyframes slide {
@@ -59,13 +106,6 @@
     background-color: #E9EFFD;
 }
 
-.login-text-and-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    animation: fade 2s ease-out;
-}
-
 @keyframes fade {
     0% {
         opacity: 0;
@@ -83,6 +123,7 @@
 .login-button {
     background-color: #FE7062;
     margin-left: 4vmin;
+    font-size: 1.1rem;
 }
 
 .login-button:hover {

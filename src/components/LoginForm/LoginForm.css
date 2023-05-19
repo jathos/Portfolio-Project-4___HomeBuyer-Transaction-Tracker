@@ -1,9 +1,10 @@
 .form-container {
     margin-left: 4vmin;
     background-color: #EBEBEB;
+    background-color: white;
     border: solid 1px;
     border-color: #13097C;
-    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.4);
+    /* box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.4); */
 }
 
 .loginForm {
