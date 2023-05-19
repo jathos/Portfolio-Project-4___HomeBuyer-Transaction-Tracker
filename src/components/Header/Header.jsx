@@ -20,10 +20,7 @@ function Header({ user, setUser }) {
                 :
                 null
             }
-            <Link to={'/'}><span class="material-symbols-outlined">
-                home_app_logo
-            </span>
-                <p className="appName">Transaction Tracker</p></Link>
+            <p className="appName">HomeBound</p>
         </header >
     );
 };

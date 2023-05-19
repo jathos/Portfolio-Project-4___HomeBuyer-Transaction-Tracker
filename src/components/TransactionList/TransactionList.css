@@ -3,7 +3,7 @@
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
-    padding: 2vmin;
+    /* padding: 2vmin; */
 }
 
 .noTransactions {

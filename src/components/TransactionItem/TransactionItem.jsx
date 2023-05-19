@@ -64,7 +64,7 @@ function TransactionItem({ transaction, allUsers, id, setRerender }) {
                     </div>
                     <div className="transaction-item-details-wrapper">
                         <div className="transaction-item-seller-buyer"><span style={{ fontWeight: 'bold' }}>Seller:</span> {transaction.sellerFirst}&nbsp;{transaction.sellerLast} &nbsp;<span style={{ fontWeight: 'bold' }}>Buyer:</span> {transaction.buyerFirst}&nbsp;{transaction.buyerLast}</div>
-                        <div className="transaction-item-tasks-messages"><span className="transaction-item-task-count">{taskCount}</span> Incomplete Tasks <span className="transaction-item-message-count">{messageCount}</span> New Messages</div>
+                        <div className="transaction-item-tasks-messages"><span className="transaction-item-task-count">{taskCount}</span><span className="transaction-item-tasks"> Incomplete Tasks</span> <span className="transaction-item-message-count">{messageCount}</span> <span className="transaction-item-messages">New Messages</span></div>
                     </div>
                     <div className="transaction-item-days-left-wrapper">
                         <div className="transaction-item-days-left-number">{daysToClose}</div>

@@ -57,10 +57,10 @@ export default function App() {
             {/* <Header user={user} setUser={setUser}></Header> */}
             {user ? <>
                 <Route exact path="/transactions">
-                    <TransactionPage transactions={transactions} user={user} setRerender={setRerender} showForm={showForm} setShowForm={setShowForm} usersRef={usersRef} />
+                    <TransactionPage transactions={transactions} setUser={setUser} user={user} setRerender={setRerender} showForm={showForm} setShowForm={setShowForm} usersRef={usersRef} />
                 </Route>
                 <Route exact path="/transactions/:id">
-                    <TransactionDetail transaction={transactions} user={user} rerender={rerender} setRerender={setRerender} contacts={contacts} />
+                    <TransactionDetail transaction={transactions} user={user} setUser={setUser} rerender={rerender} setRerender={setRerender} contacts={contacts} />
                 </Route>
                 <Redirect to="/transactions" />
             </> :

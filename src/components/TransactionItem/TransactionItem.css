@@ -2,23 +2,23 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 65%;
     width: 100%;
-    border: solid 4px #13097C;
+    border: solid 1px #13097C;
     margin: 2px;
-    height: 5vmax;
+    height: 5.5vmax;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
     color: #13097C;
     transition: box-shadow .15s;
     position: relative;
     overflow: hidden;
+    font-family: 'Oswald', sans-serif;
 }
 
 .TransactionItem:hover {
     bottom: 4px;
     right: 4px;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
-    height: 5.1vmax;
+    height: 5.6vmax;
     width: 100.5%;
 }
 
@@ -37,13 +37,15 @@
 
 .address {
     margin: 0;
-    font-size: 1.2vmax;
+    font-size: 1.4vmax;
     font-family: 'Oswald', sans-serif;
     font-weight: bold;
     color: white;
     z-index: 1;
     padding: 1rem;
     flex-grow: 1;
+    line-height: 3.4vmin;
+    letter-spacing: 1px;
 }
 
 .test {
@@ -56,6 +58,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    opacity: .8;
 }
 
 .transaction-item-details-wrapper {
@@ -66,7 +69,10 @@
     align-items: center;
     justify-content: center;
     gap: 1vmin;
-    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1vmax;
+    letter-spacing: 1px;
+    opacity: .8;
+    line-height: 4vmin;
 }
 
 .transaction-item-days-left-wrapper {
@@ -75,23 +81,22 @@
     justify-content: center;
     background-color: #E9EFFD;
     height: 100%;
-    /* margin-right: 3.5vmin; */
     align-items: center;
     flex-direction: column;
-    /* border-right: 2px solid #13097C;
-    border-left: 2px solid #13097C; */
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Oswald', sans-serif;
 }
 
 .transaction-item-days-left-number {
     color: #E24941;
-    font-size: 20pt;
+    font-size: 1.4vmax;
     font-weight: bold;
+    margin: 0px 2vmax;
+    letter-spacing: 2px;
+    line-height: 3vmin;
 }
 
 .transaction-item-task-count,
 .transaction-item-message-count {
-    background-color: green;
     background-color: #FE7062;
     border-radius: 40%;
     padding: 5px;
@@ -102,5 +107,10 @@
 .transaction-item-main {
     display: flex;
     text-decoration: none;
-    width: 65%;
+    width: 78%;
+}
+
+.transaction-item-tasks,
+.transaction-item-messages {
+    font-size: .8vmax;
 }

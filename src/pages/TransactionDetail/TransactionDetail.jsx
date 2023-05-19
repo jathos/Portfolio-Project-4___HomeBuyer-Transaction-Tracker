@@ -5,9 +5,10 @@ import EscrowCounter from '../../components/EscrowCounter/EscrowCounter';
 import TransactionViewFinder from '../../components/TransactionViewFinder/TransactionViewFinder';
 import TNMBar from '../../components/TNMBar/TNMBar';
 import NewTaskForm from '../../components/NewTaskForm/NewTaskForm';
+import Header from '../../components/Header/Header';
 import './TransactionDetail.css'
 
-function TransactionDetail({ transaction, user, rerender, setRerender, contacts }) {
+function TransactionDetail({ transaction, user, rerender, setRerender, contacts, setUser }) {
     const [view, setView] = useState("");
     const [viewFinder, setViewFinder] = useState("");
     const [showView, setShowView] = useState(true);
@@ -47,6 +48,7 @@ function TransactionDetail({ transaction, user, rerender, setRerender, contacts 
 
     return (
         <>
+            <Header user={user} setUser={setUser}></Header>
             <h1 className="address">{transaction[id].street}, {transaction[id].address}</h1>
             <hr className="underAddress"></hr>
             <EscrowCounter end={transaction[id].closeDate} start={transaction[id].acceptanceDate} />
