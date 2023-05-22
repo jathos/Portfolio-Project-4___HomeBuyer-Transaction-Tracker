@@ -394,27 +394,31 @@ textarea {
 
 .transaction-detail-body {
     height: 60%;
+    width: 100%;
     display: flex;
 }
 
 .transaction-detail-body-menu {
     height: 100%;
     width: 20%;
-    background-color: green;
+    display: flex;
+    align-items: center;
 }
 
 .transaction-detail-body-view {
     width: 80%;
     height: 100%;
-    background-color: red;
+    /* background-color: red; */
 }
 
 .transaction-detail-body-menu-items {
-    height: 100%;
+    height: 90%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border-right: solid 1px rgb(227, 218, 218);
 }
 
 .transaction-detail-menu-tasks,
@@ -422,37 +426,38 @@ textarea {
 .transaction-detail-menu-documents,
 .transaction-detail-menu-glossary {
     min-height: 8%;
-    background-color: purple;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.transaction-detail-menu-tasks>p,
-.transaction-detail-menu-contacts>p,
-.transaction-detail-menu-documents>p,
-.transaction-detail-menu-glossary>p {
+.transaction-detail-menu-tasks>div>p,
+.transaction-detail-menu-contacts>div>p,
+.transaction-detail-menu-documents>div>p,
+.transaction-detail-menu-glossary>div>p {
     color: #13097C;
     font-family: 'Oswald', sans-serif;
     font-size: 14pt;
-    opacity: .8;
+    opacity: .7;
     letter-spacing: 1.5px;
 }
 
-.transaction-detail-menu-tasks>p:hover,
-.transaction-detail-menu-contacts>p:hover,
-.transaction-detail-menu-documents>p:hover,
-.transaction-detail-menu-glossary>p:hover {
+.transaction-detail-menu-tasks>div>p:hover,
+.transaction-detail-menu-contacts>div>p:hover,
+.transaction-detail-menu-documents>div>p:hover,
+.transaction-detail-menu-glossary>div>p:hover {
     font-weight: bold;
     cursor: pointer;
 }
 
 .focused {
     height: 30%;
-    background-color: white;
+    background-color: #E9EFFD;
     animation: expand .5s ease-out;
     font-weight: bold;
+    z-index: 1;
+    opacity: 1;
 }
 
 @keyframes expand {
@@ -463,4 +468,14 @@ textarea {
     100% {
         height: 30%;
     }
+}
+
+.background-focused {
+    height: 90%;
+    width: 100%;
+    background-color: white;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

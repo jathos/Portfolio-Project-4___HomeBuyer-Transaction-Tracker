@@ -34,20 +34,36 @@ function TransactionDetail({ transaction, user, rerender, setRerender, contacts,
         focused: (menuItem == "contacts")
     });
 
+    const contactBackgroundClass = classNames({
+        "background-focused": (menuItem == "contacts")
+    });
+
     const documentClass = classNames({
         "transaction-detail-menu-documents": true,
         focused: (menuItem == "documents")
     });
+
+    const documentBackgroundClass = classNames({
+        "background-focused": (menuItem == "documents")
+    })
 
     const taskClass = classNames({
         "transaction-detail-menu-tasks": true,
         focused: (menuItem == "tasks")
     });
 
+    const taskBackgroundClass = classNames({
+        "background-focused": (menuItem == "tasks")
+    })
+
     const glossaryClass = classNames({
         "transaction-detail-menu-glossary": true,
         focused: (menuItem == "glossary")
     });
+
+    const glossaryBackgroundClass = classNames({
+        "background-focused": (menuItem == "glossary")
+    })
 
     useEffect(function () {
         console.log("splitting contacts")
@@ -112,10 +128,24 @@ function TransactionDetail({ transaction, user, rerender, setRerender, contacts,
                 <div className="transaction-detail-body">
                     <div className="transaction-detail-body-menu">
                         <div className="transaction-detail-body-menu-items">
-                            <div className={taskClass}><p onClick={() => setTasksFocus()}>Tasks</p></div>
-                            <div className={contactClass}><p onClick={() => setContactsFocus()}>Contacts</p></div>
-                            <div className={documentClass}><p onClick={() => setDocumentsFocus()}>Documents</p></div>
-                            <div className={glossaryClass}><p onClick={() => setGlossaryFocus()}>Glossary</p></div>
+                            <div className={taskClass}>
+                                <div className={taskBackgroundClass}>
+                                    <p onClick={() => setTasksFocus()}>Tasks</p>
+                                </div>
+                            </div>
+                            <div className={contactClass}>
+                                <div className={contactBackgroundClass}><p onClick={() => setContactsFocus()}>Contacts</p></div>
+                            </div>
+                            <div className={documentClass}>
+                                <div className={documentBackgroundClass}>
+                                    <p onClick={() => setDocumentsFocus()}>Documents</p>
+                                </div>
+                            </div>
+                            <div className={glossaryClass}>
+                                <div className={glossaryBackgroundClass}>
+                                    <p onClick={() => setGlossaryFocus()}>Glossary</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div className="transaction-detail-body-view">
