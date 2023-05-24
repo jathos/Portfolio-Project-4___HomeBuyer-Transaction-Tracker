@@ -1,0 +1,21 @@
+.message-feed-wrapper {
+    padding: 1rem;
+    background-color: #13097C;
+    color: white;
+    margin: 2rem;
+    animation: expand-message 50ms ease-out;
+}
+
+@keyframes expand-message {
+    0% {
+        height: 0%;
+    }
+
+    50% {
+        height: 25%;
+    }
+
+    100% {
+        height: auto;
+    }
+}

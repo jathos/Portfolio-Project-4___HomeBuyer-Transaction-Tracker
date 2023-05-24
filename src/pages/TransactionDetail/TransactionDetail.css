@@ -164,81 +164,6 @@ textarea {
     color: #e63946;
 }
 
-.contactsViewWrapper {
-    display: flex;
-    height: 100%;
-}
-
-.contactForm {
-    border-right: solid;
-    border-right-color: black;
-    width: 50%;
-    height: 100%;
-    margin-left: 7px;
-    margin-right: 7px;
-    padding: 20px 10px 0px 10px;
-}
-
-.contactFormHeader {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto 10px auto;
-    width: 50%;
-    height: 3vh;
-    /* background-color: #71b1b3; */
-    background-color: #bacbcc;
-    border-bottom: solid;
-    border-bottom-color: #1d3557;
-    border-bottom-width: 2px;
-}
-
-.contactFormHeader>h5 {
-    margin: 0;
-    /* color: #f1faee; */
-    color: #1d3557;
-    font-family: serif;
-    letter-spacing: 1.5px;
-    ;
-}
-
-.contactHeader {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 10px auto 10px auto;
-    width: 50%;
-    height: 3vh;
-    color: #1d3557;
-    background-color: #bacbcc;
-    border-bottom: solid;
-    border-bottom-color: #1d3557;
-    border-bottom-width: 2px;
-    font-family: serif;
-    letter-spacing: 2px;
-}
-
-.addContactForm {
-    margin-top: 10px;
-    grid-template-columns: 1fr;
-}
-
-.contactDetails {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 15pt;
-}
-
-.contactsView {
-    min-width: 50%;
-    flex-grow: 1;
-    display: block;
-    overflow: auto;
-    padding: 0px 4px 0px 4px;
-}
-
 .errorMessage {
     display: block;
     text-align: center;
@@ -423,6 +348,7 @@ textarea {
 }
 
 .focused {
+    margin-top: 3px;
     height: 30%;
     background-color: #E9EFFD;
     animation: expand .5s ease-out;
@@ -442,7 +368,7 @@ textarea {
 }
 
 .background-focused {
-    height: 90%;
+    height: 93%;
     width: 100%;
     background-color: white;
     z-index: 0;

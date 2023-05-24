@@ -1,3 +1,5 @@
+import './MessageItem.css';
+
 function MessageItem({ message }) {
     return (
         <>

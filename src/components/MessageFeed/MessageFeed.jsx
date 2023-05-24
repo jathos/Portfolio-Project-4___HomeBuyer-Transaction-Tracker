@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import MessageItem from '../MessageItem/MessageItem';
-import * as transactionsAPI from '../../utilities/transaction-api'
+import * as transactionsAPI from '../../utilities/transaction-api';
+import './MessageFeed.css';
 
 function MessageFeed({ taskID, transactionID, taskMessages, rerender, setRerender }) {
 
@@ -25,8 +26,7 @@ function MessageFeed({ taskID, transactionID, taskMessages, rerender, setRerende
     }
 
     return (
-        <div>
-            <hr></hr>
+        <div className="message-feed-wrapper">
             <h4>Messages</h4><hr></hr>
             {(taskMessages.length > 0) ? taskMessages.map((ele, idx) => <MessageItem message={ele} key={ele._id} />) : ""}
             <form className="messageForm" onSubmit={handleMessageSubmit}>

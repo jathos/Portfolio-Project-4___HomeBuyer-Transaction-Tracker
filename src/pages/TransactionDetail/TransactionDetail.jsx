@@ -123,11 +123,6 @@ function TransactionDetail({ transaction, user, rerender, setRerender, contacts,
         setTaskCount(incompleteTasks);
     }, []);
 
-    // useEffect(() => {
-    //     console.log("is it broken??")
-    //     setRerender(!rerender);
-    // }, [taskCount]);
-
     return (
         <>
             <Header user={user} setUser={setUser}></Header>

@@ -2,7 +2,7 @@
     height: 85%;
     flex-grow: 1;
     background-color: white;
-    padding: 4vmax 10vmax;
+    padding: 0 10vmax;
 }
 
 .transaction-page-title {

@@ -15,7 +15,6 @@ function TaskItem({ task, transactionID, rerender, setRerender, taskCount, setTa
             transactionID: transactionID
         };
         const updatedTask = await taskAPI.markComplete(payload);
-        // setRerender(!rerender);
         setTaskCount(taskCount - 1);
         setRerender(!rerender);
     };
