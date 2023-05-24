@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import MessageFeed from '../MessageFeed/MessageFeed';
 import * as taskAPI from '../../utilities/task-api';
+import './TaskItem.css';
 
-function TaskItem({ task, transactionID, rerender, setRerender }) {
+function TaskItem({ task, transactionID, rerender, setRerender, taskCount, setTaskCount }) {
 
     const [hideBody, setHideBody] = useState(true);
 
@@ -14,6 +15,8 @@ function TaskItem({ task, transactionID, rerender, setRerender }) {
             transactionID: transactionID
         };
         const updatedTask = await taskAPI.markComplete(payload);
+        // setRerender(!rerender);
+        setTaskCount(taskCount - 1);
         setRerender(!rerender);
     };
 
@@ -25,7 +28,7 @@ function TaskItem({ task, transactionID, rerender, setRerender }) {
                     <p>Due Date: {dueDate}</p>
                 </div>
                 <div>
-                    {task.isCompleted ? <h3 className="taskComplete">Completed!</h3> : <button onClick={markComplete}>Mark Complete</button>}
+                    {task.isCompleted ? <h3 className="taskComplete">Completed!</h3> : <button className="task-button" onClick={markComplete}>MARK COMPLETE</button>}
                 </div>
             </div>
             {hideBody ? "" : <><p>{task.body}</p><MessageFeed taskMessages={task.messages} taskID={task._id} transactionID={transactionID} rerender={rerender} setRerender={setRerender} /></>}

@@ -163,3 +163,7 @@ button[type="submit"] {
   margin: 0;
   justify-self: center;
 }
+
+p {
+  margin: 0;
+}

@@ -7,6 +7,8 @@ import TransactionViewFinder from '../../components/TransactionViewFinder/Transa
 import TNMBar from '../../components/TNMBar/TNMBar';
 import NewTaskForm from '../../components/NewTaskForm/NewTaskForm';
 import Header from '../../components/Header/Header';
+import TaskItem from '../../components/TaskItem/TaskItem';
+import ContactsView from '../../components/ContactsView/ContactsView';
 import './TransactionDetail.css'
 
 function TransactionDetail({ transaction, user, rerender, setRerender, contacts, setUser }) {
@@ -24,6 +26,8 @@ function TransactionDetail({ transaction, user, rerender, setRerender, contacts,
         tc: [],
         vendor: []
     });
+
+    const [taskCount, setTaskCount] = useState(0);
 
     const [menuItem, setMenuItem] = useState("");
 
@@ -108,6 +112,22 @@ function TransactionDetail({ transaction, user, rerender, setRerender, contacts,
         setMenuItem("glossary");
     };
 
+    useEffect(() => {
+        console.log("did i break it??");
+        let incompleteTasks = 0;
+        for (let i = 0; i < transaction[id].tasks.length; i++) {
+            if (transaction[id].tasks[i].isCompleted == false) {
+                incompleteTasks++
+            }
+        };
+        setTaskCount(incompleteTasks);
+    }, []);
+
+    // useEffect(() => {
+    //     console.log("is it broken??")
+    //     setRerender(!rerender);
+    // }, [taskCount]);
+
     return (
         <>
             <Header user={user} setUser={setUser}></Header>
@@ -130,7 +150,7 @@ function TransactionDetail({ transaction, user, rerender, setRerender, contacts,
                         <div className="transaction-detail-body-menu-items">
                             <div className={taskClass}>
                                 <div className={taskBackgroundClass}>
-                                    <p onClick={() => setTasksFocus()}>Tasks</p>
+                                    <p onClick={() => setTasksFocus()}>Tasks {taskCount > 0 ? <span className="transaction-detail-incomplete-task">{taskCount}</span> : null}</p>
                                 </div>
                             </div>
                             <div className={contactClass}>
@@ -149,7 +169,7 @@ function TransactionDetail({ transaction, user, rerender, setRerender, contacts,
                         </div>
                     </div>
                     <div className="transaction-detail-body-view">
-
+                        {(menuItem === "glossary") ? <>Glossary Coming Soon!</> : (menuItem === "tasks") ? transaction[id].tasks.map((ele, idx) => <TaskItem task={ele} key={idx} transactionID={transaction[id]._id} rerender={rerender} setRerender={setRerender} taskCount={taskCount} setTaskCount={setTaskCount} />) : (menuItem === "contacts") ? <ContactsView user={user} rerender={rerender} setRerender={setRerender} contacts={contacts} transactionID={transaction[id]._id} transactionContacts={transaction[id].contacts} /> : <>Please make a selection from the menu</>}
                     </div>
                 </div>
             </div>
