@@ -1,7 +1,9 @@
 .message-feed-wrapper {
     padding: 1rem;
-    background-color: #13097C;
+    background-color: white;
+    border: solid 3px #13097C;
     color: white;
+    color: #13097C;
     margin: 2rem;
     animation: expand-message 50ms ease-out;
 }
@@ -18,4 +20,17 @@
     100% {
         height: auto;
     }
+}
+
+.message-feed-header {
+    font-size: 1.2rem;
+    margin: 0 0 1rem 0;
+    text-align: center;
+    text-decoration: underline;
+    letter-spacing: 1px;
+    opacity: .8;
+}
+
+.send-message-button:hover {
+    background-color: #E24941;
 }

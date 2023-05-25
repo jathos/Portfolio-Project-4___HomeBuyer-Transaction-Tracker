@@ -6,7 +6,6 @@ import './MessageFeed.css';
 function MessageFeed({ taskID, transactionID, taskMessages, rerender, setRerender }) {
 
     const [messageFormData, setMessageFormData] = useState("")
-    // const [messages, setMessages] = useState([]);
 
     function handleChange(evt) {
         setMessageFormData(evt.target.value)
@@ -20,18 +19,17 @@ function MessageFeed({ taskID, transactionID, taskMessages, rerender, setRerende
             transactionID: transactionID
         };
         const newMessage = await transactionsAPI.createMessage(payload);
-        // setMessages([...messages, newMessage]);
         setRerender(!rerender);
         setMessageFormData("");
     }
 
     return (
         <div className="message-feed-wrapper">
-            <h4>Messages</h4><hr></hr>
+            <h4 className="message-feed-header">Messages</h4>
             {(taskMessages.length > 0) ? taskMessages.map((ele, idx) => <MessageItem message={ele} key={ele._id} />) : ""}
             <form className="messageForm" onSubmit={handleMessageSubmit}>
                 <textarea rows="3" name="body" onChange={handleChange} value={messageFormData}></textarea>
-                <button type="submit">Send Message</button>
+                <button className="send-message-button" type="submit">Send Message</button>
             </form>
         </div>
     );

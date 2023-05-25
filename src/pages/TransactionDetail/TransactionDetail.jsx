@@ -164,7 +164,7 @@ function TransactionDetail({ transaction, user, rerender, setRerender, contacts,
                         </div>
                     </div>
                     <div className="transaction-detail-body-view">
-                        {(menuItem === "glossary") ? <>Glossary Coming Soon!</> : (menuItem === "tasks") ? transaction[id].tasks.map((ele, idx) => <TaskItem task={ele} key={idx} transactionID={transaction[id]._id} rerender={rerender} setRerender={setRerender} taskCount={taskCount} setTaskCount={setTaskCount} />) : (menuItem === "contacts") ? <ContactsView user={user} rerender={rerender} setRerender={setRerender} contacts={contacts} transactionID={transaction[id]._id} transactionContacts={transaction[id].contacts} /> : <>Please make a selection from the menu</>}
+                        {(menuItem === "glossary") ? <>Glossary Coming Soon!</> : (menuItem === "tasks") ? transaction[id].tasks.map((ele, idx) => <TaskItem task={ele} key={idx} transactionID={transaction[id]._id} rerender={rerender} setRerender={setRerender} taskCount={taskCount} setTaskCount={setTaskCount} />) : (menuItem === "contacts") ? <ContactsView user={user} rerender={rerender} setRerender={setRerender} contacts={contacts} transactionID={transaction[id]._id} transactionContacts={transaction[id].contacts} /> : (menuItem == "documents") ? <>Documents coming soon!</> : <>Please make a selection from the menu</>}
                     </div>
                 </div>
             </div>

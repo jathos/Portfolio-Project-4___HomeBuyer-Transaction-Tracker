@@ -1,4 +1,27 @@
-.messageRight>h5 {
+.messageRight>h5,
+.messageLeft>h5 {
     font-weight: 400;
     letter-spacing: 2px;
+    opacity: .7;
+}
+
+.messageRight,
+.messageLeft {
+    display: block;
+    margin: 1px;
+    letter-spacing: 1px;
+}
+
+.messageLeft {
+    text-align: left;
+}
+
+.messageRight {
+    text-align: right;
+    margin-left: auto;
+}
+
+.messageLeft>p,
+.messageRight>p {
+    opacity: .9;
 }

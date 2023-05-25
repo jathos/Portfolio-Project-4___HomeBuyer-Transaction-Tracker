@@ -21,6 +21,10 @@
     font-weight: 600;
 }
 
+.taskItem:hover .task-message-count {
+    font-weight: normal;
+}
+
 .taskItem:hover {
     border-left: solid 1px #13097C;
     border-bottom: solid 1px #13097C;
@@ -58,5 +62,20 @@
 
 .task-button:hover {
     background-color: #E24941;
+}
 
+.task-body {
+    color: #13097C;
+    font-size: 10pt;
+    letter-spacing: 3px;
+    margin: 10px 0 0 15px;
+    line-height: 30px;
+}
+
+.task-message-count {
+    background-color: #FE7062;
+    border-radius: 40%;
+    padding: 2px;
+    color: white;
+    font-size: 12pt;
 }

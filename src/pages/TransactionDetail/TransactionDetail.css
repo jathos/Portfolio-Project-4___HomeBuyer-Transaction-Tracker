@@ -132,22 +132,6 @@
     width: 45%;
 }
 
-
-
-
-
-.messageRight {
-    display: block;
-    text-align: right;
-    margin: 1px;
-}
-
-.messageLeft {
-    display: block;
-    text-align: left;
-    margin: 1px;
-}
-
 .messageForm {
     grid-template-columns: 99%;
 }
@@ -195,10 +179,11 @@ textarea {
 .transaction-detail-header-address {
     width: 50%;
     font-size: 4.5vmax;
+    font-size: 5.4rem;
     color: #13097C;
     opacity: .75;
     font-weight: 900;
-    line-height: 4.2vmax;
+    line-height: 5rem;
     letter-spacing: -1.5px;
     height: 100%;
     display: flex;
@@ -211,8 +196,8 @@ textarea {
 }
 
 .transaction-detail-header-escrow {
-    width: 15%;
-    height: 85%;
+    width: 269px;
+    height: 250px;
     background-color: white;
     position: relative;
     display: flex;
@@ -221,6 +206,8 @@ textarea {
     justify-content: center;
     color: #13097C;
     line-height: 7.5vmin;
+    border-radius: 50%;
+    border: solid 1px rgb(171, 163, 163);
 }
 
 .transaction-detail-escrow-count {
@@ -237,7 +224,7 @@ textarea {
     font-weight: bold;
 }
 
-.transaction-detail-header-escrow-spinner {
+/* .transaction-detail-header-escrow-spinner {
     width: 90%;
     height: 90%;
     background-color: transparent;
@@ -248,9 +235,9 @@ textarea {
     border-bottom: solid 1px rgb(171, 163, 163);
     animation: rotate 15s infinite linear;
     position: absolute;
-}
+} */
 
-@keyframes rotate {
+/* @keyframes rotate {
     0% {
         transform: rotate(0deg);
     }
@@ -270,7 +257,7 @@ textarea {
     100% {
         transform: rotate(360deg);
     }
-}
+} */
 
 .transaction-detail-header-escrow-spinner::after {
     content: '';

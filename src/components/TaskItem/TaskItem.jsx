@@ -23,14 +23,14 @@ function TaskItem({ task, transactionID, rerender, setRerender, taskCount, setTa
         <div className="taskItem" >
             <div className="taskHeader">
                 <div className="taskTitle" onClick={() => setHideBody(!hideBody)}>
-                    <h3>{task.subject}</h3>
+                    <h3>{task.subject} {task.messages.length > 0 ? <span className="task-message-count">{task.messages.length}</span> : null}</h3>
                     <p>Due Date: {dueDate}</p>
                 </div>
                 <div>
                     {task.isCompleted ? <h3 className="taskComplete">Completed!</h3> : <button className="task-button" onClick={markComplete}>MARK COMPLETE</button>}
                 </div>
             </div>
-            {hideBody ? "" : <><p>{task.body}</p><MessageFeed taskMessages={task.messages} taskID={task._id} transactionID={transactionID} rerender={rerender} setRerender={setRerender} /></>}
+            {hideBody ? "" : <><p className="task-body">{task.body}</p><MessageFeed taskMessages={task.messages} taskID={task._id} transactionID={transactionID} rerender={rerender} setRerender={setRerender} /></>}
         </div>
     );
 };
